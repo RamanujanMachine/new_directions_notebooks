@@ -8421,2103 +8421,2103 @@
   "New best trajectory": [
    {
     "depth": 10,
-    "delta": 0.2778409759661162,
-    "correct_digits": 1093.7530607591946,
-    "log10_q": 855.9383220061937,
-    "working_digits": 1874
+    "delta": 0.3319012953486885,
+    "correct_digits": 271.437125129877,
+    "log10_q": 203.79672733842895,
+    "working_digits": 568
    },
    {
     "depth": 20,
-    "delta": 0.2761723359981468,
-    "correct_digits": 2186.8470866459706,
-    "log10_q": 1713.5985673404741,
-    "working_digits": 3588
+    "delta": 0.2958276167266588,
+    "correct_digits": 543.8960642605385,
+    "log10_q": 419.7287179559067,
+    "working_digits": 1000
    },
    {
     "depth": 30,
-    "delta": 0.2790708250338414,
-    "correct_digits": 3281.254260686975,
-    "log10_q": 2565.3421190340737,
-    "working_digits": 5292
+    "delta": 0.2948458900275583,
+    "correct_digits": 815.3449653815871,
+    "log10_q": 629.6849468041592,
+    "working_digits": 1420
    },
    {
     "depth": 40,
-    "delta": 0.280295755363833,
-    "correct_digits": 4374.4339498003865,
-    "log10_q": 3416.7370558510247,
-    "working_digits": 6994
+    "delta": 0.28232609673517994,
+    "correct_digits": 1087.464044426608,
+    "log10_q": 848.0401726170174,
+    "working_digits": 1858
    },
    {
     "depth": 50,
-    "delta": 0.2754149782478671,
-    "correct_digits": 5468.76907968406,
-    "log10_q": 4287.83507560568,
-    "working_digits": 8736
+    "delta": 0.29420040461095315,
+    "correct_digits": 1360.2790400180554,
+    "log10_q": 1051.0574986467927,
+    "working_digits": 2264
    },
    {
     "depth": 60,
-    "delta": 0.27811204384317895,
-    "correct_digits": 6562.021718639172,
-    "log10_q": 5134.152166274645,
-    "working_digits": 10430
+    "delta": 0.293715273500316,
+    "correct_digits": 1631.4482065827372,
+    "log10_q": 1261.0566173255731,
+    "working_digits": 2684
    },
    {
     "depth": 70,
-    "delta": 0.27645514229886237,
-    "correct_digits": 7656.293739250888,
-    "log10_q": 5998.09071665621,
-    "working_digits": 12158
+    "delta": 0.29208373354930833,
+    "correct_digits": 1903.5046934559537,
+    "log10_q": 1473.2053689950058,
+    "working_digits": 3108
    },
    {
     "depth": 80,
-    "delta": 0.2755023947826182,
-    "correct_digits": 8749.610328474451,
-    "log10_q": 6859.736496195002,
-    "working_digits": 13880
+    "delta": 0.2868034015139623,
+    "correct_digits": 2178.000905866636,
+    "log10_q": 1692.5669479146181,
+    "working_digits": 3546
    },
    {
     "depth": 90,
-    "delta": 0.2775441324533815,
-    "correct_digits": 9843.82590422654,
-    "log10_q": 7705.272682300663,
-    "working_digits": 15572
+    "delta": 0.28938964774678255,
+    "correct_digits": 2447.5605751328812,
+    "log10_q": 1898.2319110518768,
+    "working_digits": 3958
    },
    {
     "depth": 100,
-    "delta": 0.27908766772337323,
-    "correct_digits": 10937.199785238487,
-    "log10_q": 8550.781984088257,
-    "working_digits": 17264
+    "delta": 0.28970591320173456,
+    "correct_digits": 2719.5556196746707,
+    "log10_q": 2108.663371887076,
+    "working_digits": 4378
    },
    {
     "depth": 110,
-    "delta": 0.2771479181113487,
-    "correct_digits": 12031.36400449374,
-    "log10_q": 9420.49376887038,
-    "working_digits": 19002
+    "delta": 0.28543536864334995,
+    "correct_digits": 2992.422534758997,
+    "log10_q": 2327.9447631172643,
+    "working_digits": 4816
    },
    {
     "depth": 120,
-    "delta": 0.27662926236722324,
-    "correct_digits": 13124.790109988628,
-    "log10_q": 10280.81565798644,
-    "working_digits": 20724
+    "delta": 0.2852109001330059,
+    "correct_digits": 3263.683218850172,
+    "log10_q": 2539.414518280552,
+    "working_digits": 5240
    },
    {
     "depth": 130,
-    "delta": 0.27445613569163857,
-    "correct_digits": 14218.906931948884,
-    "log10_q": 11156.842933815356,
-    "working_digits": 22476
+    "delta": 0.28318343131745133,
+    "correct_digits": 3535.615377629158,
+    "log10_q": 2755.346812730525,
+    "working_digits": 5672
    },
    {
     "depth": 140,
-    "delta": 0.275240043185969,
-    "correct_digits": 15312.381331370636,
-    "log10_q": 12007.450215502386,
-    "working_digits": 24176
+    "delta": 0.2843456161835597,
+    "correct_digits": 3808.211430857782,
+    "log10_q": 2965.0986330096284,
+    "working_digits": 6092
    },
    {
     "depth": 150,
-    "delta": 0.27510039019287114,
-    "correct_digits": 16406.453875274525,
-    "log10_q": 12866.793863025085,
-    "working_digits": 25894
+    "delta": 0.2835086312507073,
+    "correct_digits": 4079.8182525647267,
+    "log10_q": 3178.6449683545734,
+    "working_digits": 6518
    },
    {
     "depth": 160,
-    "delta": 0.2769591684152835,
-    "correct_digits": 17499.97348416648,
-    "log10_q": 13704.411164441604,
-    "working_digits": 27570
+    "delta": 0.2774250481897843,
+    "correct_digits": 4351.683096250345,
+    "log10_q": 3406.6054226954734,
+    "working_digits": 6974
    },
    {
     "depth": 170,
-    "delta": 0.2775862199492811,
-    "correct_digits": 18594.004222764645,
-    "log10_q": 14554.011253739736,
-    "working_digits": 29270
+    "delta": 0.2844628915111785,
+    "correct_digits": 4624.124555264366,
+    "log10_q": 3600.0452685900914,
+    "working_digits": 7362
    },
    {
     "depth": 180,
-    "delta": 0.2745209498749693,
-    "correct_digits": 19687.56660929265,
-    "log10_q": 15447.032558565637,
-    "working_digits": 31056
+    "delta": 0.2769426434203141,
+    "correct_digits": 4895.969179447305,
+    "log10_q": 3834.133979842166,
+    "working_digits": 7830
    },
    {
     "depth": 190,
-    "delta": 0.2752827539828283,
-    "correct_digits": 20781.55750200155,
-    "log10_q": 16295.646935629597,
-    "working_digits": 32752
+    "delta": 0.28011074011336945,
+    "correct_digits": 5167.758272361407,
+    "log10_q": 4036.9618896438124,
+    "working_digits": 8234
    },
    {
     "depth": 200,
-    "delta": 0.2735667151135985,
-    "correct_digits": 21875.16075434602,
-    "log10_q": 17176.29747601783,
-    "working_digits": 34514
+    "delta": 0.2841612837099082,
+    "correct_digits": 5440.090520235828,
+    "log10_q": 4236.2985002316445,
+    "working_digits": 8634
    },
    {
     "depth": 210,
-    "delta": 0.27326689695499096,
-    "correct_digits": 22969.113340767126,
-    "log10_q": 18039.51190099861,
-    "working_digits": 36240
+    "delta": 0.2845376108946099,
+    "correct_digits": 5712.1421252581895,
+    "log10_q": 4446.846925159316,
+    "working_digits": 9054
    },
    {
     "depth": 220,
-    "delta": 0.2762686178275447,
-    "correct_digits": 24062.755974480137,
-    "log10_q": 18853.990169749366,
-    "working_digits": 37870
+    "delta": 0.2834539798684151,
+    "correct_digits": 5983.840684617774,
+    "log10_q": 4662.294697337929,
+    "working_digits": 9486
    },
    {
     "depth": 230,
-    "delta": 0.2741711955420958,
-    "correct_digits": 25156.67144080065,
-    "log10_q": 19743.556853910628,
-    "working_digits": 39648
+    "delta": 0.28131371165567737,
+    "correct_digits": 6256.086734667758,
+    "log10_q": 4882.556611826013,
+    "working_digits": 9926
    },
    {
     "depth": 240,
-    "delta": 0.27576226511910573,
-    "correct_digits": 26250.352333576226,
-    "log10_q": 20576.210044216572,
-    "working_digits": 41314
+    "delta": 0.27986866316026565,
+    "correct_digits": 6528.349066677122,
+    "log10_q": 5100.796085246162,
+    "working_digits": 10362
    },
    {
     "depth": 250,
-    "delta": 0.2755454998621518,
-    "correct_digits": 27344.23155964704,
-    "log10_q": 21437.28433254802,
-    "working_digits": 43036
+    "delta": 0.2809407633449911,
+    "correct_digits": 6799.9303597612725,
+    "log10_q": 5308.543965767972,
+    "working_digits": 10778
    },
    {
     "depth": 260,
-    "delta": 0.2764421860957618,
-    "correct_digits": 28437.949905741283,
-    "log10_q": 22279.073988242348,
-    "working_digits": 44720
+    "delta": 0.2838730328675232,
+    "correct_digits": 7072.103136225249,
+    "log10_q": 5508.413180413757,
+    "working_digits": 11178
    },
    {
     "depth": 270,
-    "delta": 0.2755957055195804,
-    "correct_digits": 29531.793497776394,
-    "log10_q": 23151.374193242045,
-    "working_digits": 46464
+    "delta": 0.2814258828436131,
+    "correct_digits": 7344.618549892321,
+    "log10_q": 5731.5984078563115,
+    "working_digits": 11624
    },
    {
     "depth": 280,
-    "delta": 0.27418229658378807,
-    "correct_digits": 30625.548777207136,
-    "log10_q": 24035.45305826124,
-    "working_digits": 48232
+    "delta": 0.2841897962654288,
+    "correct_digits": 7616.02757552148,
+    "log10_q": 5930.6090094079245,
+    "working_digits": 12022
    },
    {
     "depth": 290,
-    "delta": 0.27471373053477105,
-    "correct_digits": 31719.3570892395,
-    "log10_q": 24883.514101579905,
-    "working_digits": 49928
+    "delta": 0.28209095569321496,
+    "correct_digits": 7888.134401553635,
+    "log10_q": 6152.554439703221,
+    "working_digits": 12466
    },
    {
     "depth": 300,
-    "delta": 0.27512789799508525,
-    "correct_digits": 32813.1490487438,
-    "log10_q": 25733.221820600676,
-    "working_digits": 51628
+    "delta": 0.28144800197168035,
+    "correct_digits": 8161.054670529655,
+    "log10_q": 6368.619450787525,
+    "working_digits": 12898
    },
    {
     "depth": 310,
-    "delta": 0.27557534191044025,
-    "correct_digits": 33906.92219475654,
-    "log10_q": 26581.669526453727,
-    "working_digits": 53324
+    "delta": 0.2846611083613348,
+    "correct_digits": 8432.13290004318,
+    "log10_q": 6563.702166401604,
+    "working_digits": 13288
    },
    {
     "depth": 320,
-    "delta": 0.2731878270695835,
-    "correct_digits": 35000.75083874998,
-    "log10_q": 27490.642067564382,
-    "working_digits": 55142
+    "delta": 0.279129144541914,
+    "correct_digits": 8704.177415739758,
+    "log10_q": 6804.768269787901,
+    "working_digits": 13770
    },
    {
     "depth": 330,
-    "delta": 0.27239290829881274,
-    "correct_digits": 36094.48869651782,
-    "log10_q": 28367.407945377578,
-    "working_digits": 56896
+    "delta": 0.2777831947126613,
+    "correct_digits": 8977.690767460788,
+    "log10_q": 7025.989075932109,
+    "working_digits": 14212
    },
    {
     "depth": 340,
-    "delta": 0.27558747890489615,
-    "correct_digits": 37188.35428725268,
-    "log10_q": 29153.903516816605,
-    "working_digits": 58470
+    "delta": 0.2805681588498043,
+    "correct_digits": 9248.247280273152,
+    "log10_q": 7221.987534486138,
+    "working_digits": 14604
    },
    {
     "depth": 350,
-    "delta": 0.27506048479786993,
-    "correct_digits": 38282.05649421339,
-    "log10_q": 30023.718051526077,
-    "working_digits": 60208
+    "delta": 0.2783872490564159,
+    "correct_digits": 9520.230246067207,
+    "log10_q": 7447.062893574805,
+    "working_digits": 15056
    },
    {
     "depth": 360,
-    "delta": 0.27455577695654637,
-    "correct_digits": 39375.959561149844,
-    "log10_q": 30893.869278262504,
-    "working_digits": 61950
+    "delta": 0.2796205337566572,
+    "correct_digits": 9793.026560721739,
+    "log10_q": 7653.070814651415,
+    "working_digits": 15468
    },
    {
     "depth": 370,
-    "delta": 0.27604175268193415,
-    "correct_digits": 40469.62550196053,
-    "log10_q": 31714.969684105614,
-    "working_digits": 63592
+    "delta": 0.28073313236576974,
+    "correct_digits": 10064.372211248554,
+    "log10_q": 7858.289878592936,
+    "working_digits": 15878
    },
    {
     "depth": 380,
-    "delta": 0.2740709837032018,
-    "correct_digits": 41563.56686118444,
-    "log10_q": 32622.646142035344,
-    "working_digits": 65406
+    "delta": 0.2808752748628661,
+    "correct_digits": 10336.291663844,
+    "log10_q": 8069.709726382712,
+    "working_digits": 16300
    },
    {
     "depth": 390,
-    "delta": 0.27539950682148945,
-    "correct_digits": 42657.195645897955,
-    "log10_q": 33446.14406524813,
-    "working_digits": 67054
+    "delta": 0.2809101875271117,
+    "correct_digits": 10608.851911285576,
+    "log10_q": 8282.276161583755,
+    "working_digits": 16726
    },
    {
     "depth": 400,
-    "delta": 0.27485528923405667,
-    "correct_digits": 43751.176431379834,
-    "log10_q": 34318.543289462985,
-    "working_digits": 68798
+    "delta": 0.27957385477286106,
+    "correct_digits": 10880.510059897204,
+    "log10_q": 8503.229430104773,
+    "working_digits": 17168
    },
    {
     "depth": 410,
-    "delta": 0.2748108674811588,
-    "correct_digits": 44844.7668622824,
-    "log10_q": 35177.58438229284,
-    "working_digits": 70516
+    "delta": 0.2821529997948581,
+    "correct_digits": 11152.360901303331,
+    "log10_q": 8698.151393076869,
+    "working_digits": 17558
    },
    {
     "depth": 420,
-    "delta": 0.27465366399136465,
-    "correct_digits": 45938.7885720538,
-    "log10_q": 36040.21223161449,
-    "working_digits": 72242
+    "delta": 0.2802987673944302,
+    "correct_digits": 11424.778409091443,
+    "log10_q": 8923.52527398141,
+    "working_digits": 18008
    },
    {
     "depth": 430,
-    "delta": 0.27451576762401997,
-    "correct_digits": 47032.339095968935,
-    "log10_q": 36902.12415625712,
-    "working_digits": 73966
+    "delta": 0.28042369055243593,
+    "correct_digits": 11696.664723030637,
+    "log10_q": 9134.995556028909,
+    "working_digits": 18430
    },
    {
     "depth": 440,
-    "delta": 0.2753344246538784,
-    "correct_digits": 48126.40365816973,
-    "log10_q": 37736.30094806786,
-    "working_digits": 75634
+    "delta": 0.28050875402996156,
+    "correct_digits": 11968.43752319634,
+    "log10_q": 9346.626866493332,
+    "working_digits": 18854
    },
    {
     "depth": 450,
-    "delta": 0.27537846764109314,
-    "correct_digits": 49219.91229918807,
-    "log10_q": 38592.39711818559,
-    "working_digits": 77346
+    "delta": 0.2805176255536252,
+    "correct_digits": 12240.751500290351,
+    "log10_q": 9559.221408606638,
+    "working_digits": 19280
    },
    {
     "depth": 460,
-    "delta": 0.27569360831404055,
-    "correct_digits": 50314.02216588375,
-    "log10_q": 39440.52226802239,
-    "working_digits": 79042
+    "delta": 0.2811901432813085,
+    "correct_digits": 12512.843116727729,
+    "log10_q": 9766.577726457193,
+    "working_digits": 19694
    },
    {
     "depth": 470,
-    "delta": 0.27494172971051495,
-    "correct_digits": 51407.48643055522,
-    "log10_q": 40321.43997845899,
-    "working_digits": 80804
+    "delta": 0.2833848772013145,
+    "correct_digits": 12784.521361916399,
+    "log10_q": 9961.56460078888,
+    "working_digits": 20084
    },
    {
     "depth": 480,
-    "delta": 0.2741192241797317,
-    "correct_digits": 52501.64471211037,
-    "log10_q": 41206.226007546924,
-    "working_digits": 82574
+    "delta": 0.28320187989221873,
+    "correct_digits": 13056.752264631965,
+    "log10_q": 10175.134925557197,
+    "working_digits": 20512
    },
    {
     "depth": 490,
-    "delta": 0.2748093682899204,
-    "correct_digits": 53595.061454264105,
-    "log10_q": 42041.628173911704,
-    "working_digits": 84244
+    "delta": 0.27721114628686633,
+    "correct_digits": 13329.059167389354,
+    "log10_q": 10436.065490142222,
+    "working_digits": 21034
    },
    {
     "depth": 500,
-    "delta": 0.2745865818819805,
-    "correct_digits": 54689.27211560361,
-    "log10_q": 42907.459479804515,
-    "working_digits": 85976
+    "delta": 0.27888525436045525,
+    "correct_digits": 13600.61249403603,
+    "log10_q": 10634.740253407193,
+    "working_digits": 21430
    },
    {
     "depth": 510,
-    "delta": 0.2743744032437822,
-    "correct_digits": 55782.63733942757,
-    "log10_q": 43772.565736912875,
-    "working_digits": 87706
+    "delta": 0.28131768659863426,
+    "correct_digits": 13872.771913565457,
+    "log10_q": 10826.957325776013,
+    "working_digits": 21814
    },
    {
     "depth": 520,
-    "delta": 0.2739150023804796,
-    "correct_digits": 56876.90549532118,
-    "log10_q": 44647.33156375356,
-    "working_digits": 89456
+    "delta": 0.2800893447775676,
+    "correct_digits": 14145.3479969131,
+    "log10_q": 11050.281806205521,
+    "working_digits": 22262
    },
    {
     "depth": 530,
-    "delta": 0.2737941744501593,
-    "correct_digits": 57970.21405953767,
-    "log10_q": 45509.87531762017,
-    "working_digits": 91182
+    "delta": 0.2779074228947507,
+    "correct_digits": 14416.711250931545,
+    "log10_q": 11281.498951054231,
+    "working_digits": 22724
    },
    {
     "depth": 540,
-    "delta": 0.27406855480839837,
-    "correct_digits": 59064.54643722023,
-    "log10_q": 46359.001809053116,
-    "working_digits": 92880
+    "delta": 0.27903129069261823,
+    "correct_digits": 14688.805685061328,
+    "log10_q": 11484.320823071559,
+    "working_digits": 23130
    },
    {
     "depth": 550,
-    "delta": 0.2748806027303882,
-    "correct_digits": 60157.79159202352,
-    "log10_q": 47187.00046356081,
-    "working_digits": 94536
+    "delta": 0.2809106378439443,
+    "correct_digits": 14961.859215323644,
+    "log10_q": 11680.64248455908,
+    "working_digits": 23522
    },
    {
     "depth": 560,
-    "delta": 0.27510378795908136,
-    "correct_digits": 61252.19729598172,
-    "log10_q": 48037.028730046666,
-    "working_digits": 96236
+    "delta": 0.27865614562597324,
+    "correct_digits": 15232.818266768309,
+    "log10_q": 11913.146719606151,
+    "working_digits": 23988
    },
    {
     "depth": 570,
-    "delta": 0.27339552772243314,
-    "correct_digits": 62345.369917890304,
-    "log10_q": 48959.941008588146,
-    "working_digits": 98082
+    "delta": 0.28102673930908284,
+    "correct_digits": 15504.85075250591,
+    "log10_q": 12103.455983181426,
+    "working_digits": 24368
    },
    {
     "depth": 580,
-    "delta": 0.2743705354833957,
-    "correct_digits": 63439.8617883863,
-    "log10_q": 49781.33127059644,
-    "working_digits": 99724
+    "delta": 0.2789220659382305,
+    "correct_digits": 15778.092018411842,
+    "log10_q": 12337.023841118005,
+    "working_digits": 24836
    },
    {
     "depth": 590,
-    "delta": 0.2762728758882332,
-    "correct_digits": 64532.9490214265,
-    "log10_q": 50563.59830299946,
-    "working_digits": 101288
+    "delta": 0.27983225378839305,
+    "correct_digits": 16048.934579557705,
+    "log10_q": 12539.873512369872,
+    "working_digits": 25240
    },
    {
     "depth": 600,
-    "delta": 0.27437763128455345,
-    "correct_digits": 65627.54629963098,
-    "log10_q": 51497.72303636513,
-    "working_digits": 103156
+    "delta": 0.28002203844333146,
+    "correct_digits": 16320.90534899033,
+    "log10_q": 12750.487771943845,
+    "working_digits": 25662
    },
    {
     "depth": 610,
-    "delta": 0.27421128941363104,
-    "correct_digits": 66720.5288899693,
-    "log10_q": 52362.21766695606,
-    "working_digits": 104886
+    "delta": 0.27869886262129734,
+    "correct_digits": 16593.64210010562,
+    "log10_q": 12976.97416113213,
+    "working_digits": 26114
    },
    {
     "depth": 620,
-    "delta": 0.27368304981397046,
-    "correct_digits": 67815.26326630378,
-    "log10_q": 53243.43703577482,
-    "working_digits": 106648
+    "delta": 0.280312452850642,
+    "correct_digits": 16865.0618230284,
+    "log10_q": 13172.614064229394,
+    "working_digits": 26506
    },
    {
     "depth": 630,
-    "delta": 0.27421755741443526,
-    "correct_digits": 68908.10951372045,
-    "log10_q": 54078.76316941088,
-    "working_digits": 108318
+    "delta": 0.2786166473612906,
+    "correct_digits": 17136.968350763473,
+    "log10_q": 13402.74145978735,
+    "working_digits": 26966
    },
    {
     "depth": 640,
-    "delta": 0.2750575817146153,
-    "correct_digits": 70003.04254130139,
-    "log10_q": 54901.86760598357,
-    "working_digits": 109966
+    "delta": 0.2803064074528059,
+    "correct_digits": 17409.495946274776,
+    "log10_q": 13597.913628278486,
+    "working_digits": 27356
    },
    {
     "depth": 650,
-    "delta": 0.27561421573914435,
-    "correct_digits": 71095.69088560705,
-    "log10_q": 55734.47677863266,
-    "working_digits": 111630
+    "delta": 0.2794024616435146,
+    "correct_digits": 17681.20259641598,
+    "log10_q": 13819.891024519984,
+    "working_digits": 27800
    },
    {
     "depth": 660,
-    "delta": 0.2752534242421312,
-    "correct_digits": 72190.99607996656,
-    "log10_q": 56609.1372174663,
-    "working_digits": 113380
+    "delta": 0.27741520139752884,
+    "correct_digits": 17953.039062981923,
+    "log10_q": 14054.19243746339,
+    "working_digits": 28270
    },
    {
     "depth": 670,
-    "delta": 0.2749374631169777,
-    "correct_digits": 73283.27300118252,
-    "log10_q": 57479.89616841203,
-    "working_digits": 115122
+    "delta": 0.2799680603353601,
+    "correct_digits": 18225.43402292764,
+    "log10_q": 14238.975633620463,
+    "working_digits": 28638
    },
    {
     "depth": 680,
-    "delta": 0.2745886745122518,
-    "correct_digits": 74379.03386153927,
-    "log10_q": 58355.32305353488,
-    "working_digits": 116872
+    "delta": 0.2795288890516481,
+    "correct_digits": 18497.3612289647,
+    "log10_q": 14456.384210812495,
+    "working_digits": 29074
    },
    {
     "depth": 690,
-    "delta": 0.27570123484699877,
-    "correct_digits": 75470.8558585651,
-    "log10_q": 59160.290667600326,
-    "working_digits": 118482
+    "delta": 0.27922541021767244,
+    "correct_digits": 18769.117106548314,
+    "log10_q": 14672.251627142528,
+    "working_digits": 29506
    },
    {
     "depth": 700,
-    "delta": 0.2747184592265576,
-    "correct_digits": 76565.93077769369,
-    "log10_q": 60064.97373871128,
-    "working_digits": 120292
+    "delta": 0.2814191760222672,
+    "correct_digits": 19041.413558964923,
+    "log10_q": 14859.629007638669,
+    "working_digits": 29880
    },
    {
     "depth": 710,
-    "delta": 0.27528970068700775,
-    "correct_digits": 77658.43945841209,
-    "log10_q": 60894.74369359129,
-    "working_digits": 121950
+    "delta": 0.2817984810473443,
+    "correct_digits": 19313.54555836737,
+    "log10_q": 15067.536624467264,
+    "working_digits": 30296
    },
    {
     "depth": 720,
-    "delta": 0.2741421486121415,
-    "correct_digits": 78753.26007774731,
-    "log10_q": 61808.84932150565,
-    "working_digits": 123778
+    "delta": 0.281727743834929,
+    "correct_digits": 19585.202362518532,
+    "log10_q": 15280.31397987814,
+    "working_digits": 30722
    },
    {
     "depth": 730,
-    "delta": 0.27439290358285007,
-    "correct_digits": 79846.02380392875,
-    "log10_q": 62654.165430024186,
-    "working_digits": 125470
+    "delta": 0.28099283135116054,
+    "correct_digits": 19857.418543500287,
+    "log10_q": 15501.584440995784,
+    "working_digits": 31164
    },
    {
     "depth": 740,
-    "delta": 0.27431125182989463,
-    "correct_digits": 80940.68429220007,
-    "log10_q": 63517.20129283194,
-    "working_digits": 127196
+    "delta": 0.2815500038569895,
+    "correct_digits": 20129.77190838865,
+    "log10_q": 15707.363620463902,
+    "working_digits": 31576
    },
    {
     "depth": 750,
-    "delta": 0.2741296070688688,
-    "correct_digits": 82033.60890091256,
-    "log10_q": 64384.03789205607,
-    "working_digits": 128930
+    "delta": 0.2819582004373352,
+    "correct_digits": 20401.294955548758,
+    "log10_q": 15914.165491970747,
+    "working_digits": 31990
    },
    {
     "depth": 760,
-    "delta": 0.274802687279787,
-    "correct_digits": 83128.15168315997,
-    "log10_q": 65208.64170795041,
-    "working_digits": 130578
+    "delta": 0.28089949042830514,
+    "correct_digits": 20673.441256567643,
+    "log10_q": 16139.784121277846,
+    "working_digits": 32440
    },
    {
     "depth": 770,
-    "delta": 0.27532321359140427,
-    "correct_digits": 84221.19475783371,
-    "log10_q": 66039.09805786458,
-    "working_digits": 132240
+    "delta": 0.2805777592651769,
+    "correct_digits": 20946.084254407073,
+    "log10_q": 16356.745307232562,
+    "working_digits": 32874
    },
    {
     "depth": 780,
-    "delta": 0.27376523122008106,
-    "correct_digits": 85315.64394354189,
-    "log10_q": 66979.09618856684,
-    "working_digits": 134120
+    "delta": 0.27837072655746914,
+    "correct_digits": 21217.395271258174,
+    "log10_q": 16597.216152152203,
+    "working_digits": 33356
    },
    {
     "depth": 790,
-    "delta": 0.27306934281859696,
-    "correct_digits": 86408.78138595463,
-    "log10_q": 67874.37139491878,
-    "working_digits": 135910
+    "delta": 0.2783638855429041,
+    "correct_digits": 21489.477423389315,
+    "log10_q": 16810.14120190279,
+    "working_digits": 33782
    },
    {
     "depth": 800,
-    "delta": 0.27375769871702094,
-    "correct_digits": 87503.15244354442,
-    "log10_q": 68696.85854042809,
-    "working_digits": 137556
+    "delta": 0.2782282196417977,
+    "correct_digits": 21762.715317958246,
+    "log10_q": 17025.68835794979,
+    "working_digits": 34212
    },
    {
     "depth": 810,
-    "delta": 0.27375905578267,
-    "correct_digits": 88596.36879949173,
-    "log10_q": 69555.04527899358,
-    "working_digits": 139272
+    "delta": 0.28181305422153824,
+    "correct_digits": 22033.504012887228,
+    "log10_q": 17189.32721142278,
+    "working_digits": 34540
    },
    {
     "depth": 820,
-    "delta": 0.27375810974515435,
-    "correct_digits": 89690.67242186262,
-    "log10_q": 70414.2110936647,
-    "working_digits": 140990
+    "delta": 0.28065915954365045,
+    "correct_digits": 22305.524473666344,
+    "log10_q": 17417.22167638631,
+    "working_digits": 34996
    },
    {
     "depth": 830,
-    "delta": 0.2747245710890508,
-    "correct_digits": 90783.95701582494,
-    "log10_q": 71218.48835020447,
-    "working_digits": 142598
+    "delta": 0.2778095528016584,
+    "correct_digits": 22578.603600538612,
+    "log10_q": 17669.772111997398,
+    "working_digits": 35500
    },
    {
     "depth": 840,
-    "delta": 0.27570664243541637,
-    "correct_digits": 91878.20097168897,
-    "log10_q": 72021.41771111799,
-    "working_digits": 144204
+    "delta": 0.27668465945202053,
+    "correct_digits": 22849.62231618491,
+    "log10_q": 17897.624246532767,
+    "working_digits": 35956
    },
    {
     "depth": 850,
-    "delta": 0.27423399967718975,
-    "correct_digits": 92971.54605576128,
-    "log10_q": 72962.6945124007,
-    "working_digits": 146086
+    "delta": 0.2769933256183374,
+    "correct_digits": 23121.580790760992,
+    "log10_q": 18106.26596624161,
+    "working_digits": 36374
    },
    {
     "depth": 860,
-    "delta": 0.2745283806708952,
-    "correct_digits": 94065.73618769861,
-    "log10_q": 73804.34803514037,
-    "working_digits": 147770
+    "delta": 0.2783758077746576,
+    "correct_digits": 23394.266160845,
+    "log10_q": 18299.991300342852,
+    "working_digits": 36760
    },
    {
     "depth": 870,
-    "delta": 0.27414180141713995,
-    "correct_digits": 95159.13594386158,
-    "log10_q": 74684.88659427283,
-    "working_digits": 149530
+    "delta": 0.27788728292235265,
+    "correct_digits": 23665.751966890577,
+    "log10_q": 18519.436168712982,
+    "working_digits": 37200
    },
    {
     "depth": 880,
-    "delta": 0.27460026971241414,
-    "correct_digits": 96253.2767533256,
-    "log10_q": 75516.44153899564,
-    "working_digits": 151194
+    "delta": 0.2791469204647924,
+    "correct_digits": 23937.64534774127,
+    "log10_q": 18713.75755573352,
+    "working_digits": 37588
    },
    {
     "depth": 890,
-    "delta": 0.2744768988388004,
-    "correct_digits": 97346.72670884164,
-    "log10_q": 76381.71142806594,
-    "working_digits": 152924
+    "delta": 0.2792911455245112,
+    "correct_digits": 24210.142955726056,
+    "log10_q": 18924.65451701369,
+    "working_digits": 38010
    },
    {
     "depth": 900,
-    "delta": 0.27463223878467774,
-    "correct_digits": 98440.82172096484,
-    "log10_q": 77230.76407891982,
-    "working_digits": 154624
+    "delta": 0.27945570344430426,
+    "correct_digits": 24481.895824114952,
+    "log10_q": 19134.6177583245,
+    "working_digits": 38430
    },
    {
     "depth": 910,
-    "delta": 0.27429187069823513,
-    "correct_digits": 99534.31838406267,
-    "log10_q": 78109.51374077579,
-    "working_digits": 156380
+    "delta": 0.28026884858952117,
+    "correct_digits": 24753.717518334124,
+    "log10_q": 19334.780773276976,
+    "working_digits": 38830
    },
    {
     "depth": 920,
-    "delta": 0.2736590127713314,
-    "correct_digits": 100628.37038607679,
-    "log10_q": 79007.30837457142,
-    "working_digits": 158176
+    "delta": 0.2808130000042044,
+    "correct_digits": 25026.0911751484,
+    "log10_q": 19539.223270739953,
+    "working_digits": 39240
    },
    {
     "depth": 930,
-    "delta": 0.2744190280471164,
-    "correct_digits": 101721.91100812993,
-    "log10_q": 79818.26131708478,
-    "working_digits": 159798
+    "delta": 0.2807872990768657,
+    "correct_digits": 25298.05871253558,
+    "log10_q": 19751.959385269744,
+    "working_digits": 39664
    },
    {
     "depth": 940,
-    "delta": 0.27490479175165344,
-    "correct_digits": 102815.9222108228,
-    "log10_q": 80645.96107569651,
-    "working_digits": 161454
+    "delta": 0.28044282902207934,
+    "correct_digits": 25569.796977414306,
+    "log10_q": 19969.495238567495,
+    "working_digits": 40100
    },
    {
     "depth": 950,
-    "delta": 0.27526412309234255,
-    "correct_digits": 103909.5046256242,
-    "log10_q": 81480.7715076762,
-    "working_digits": 163122
+    "delta": 0.28023944170736215,
+    "correct_digits": 25842.076581659538,
+    "log10_q": 20185.346381139327,
+    "working_digits": 40532
    },
    {
     "depth": 960,
-    "delta": 0.2741629416202511,
-    "correct_digits": 105003.47677554519,
-    "log10_q": 82409.7714237558,
-    "working_digits": 164980
+    "delta": 0.2791980799709256,
+    "correct_digits": 26114.249560752047,
+    "log10_q": 20414.547183611772,
+    "working_digits": 40990
    },
    {
     "depth": 970,
-    "delta": 0.27438350596720185,
-    "correct_digits": 106097.09928799847,
-    "log10_q": 83253.66641298089,
-    "working_digits": 166668
+    "delta": 0.27990125854416054,
+    "correct_digits": 26385.883654005916,
+    "log10_q": 20615.561925471397,
+    "working_digits": 41392
    },
    {
     "depth": 980,
-    "delta": 0.2748473231527447,
-    "correct_digits": 107191.0337467339,
-    "log10_q": 84081.46748243271,
-    "working_digits": 168324
+    "delta": 0.27914929953511475,
+    "correct_digits": 26658.085501591893,
+    "log10_q": 20840.48008413117,
+    "working_digits": 41842
    },
    {
     "depth": 990,
-    "delta": 0.27516401183003397,
-    "correct_digits": 108284.6950546817,
-    "log10_q": 84918.248986088,
-    "working_digits": 169998
+    "delta": 0.27878435084833286,
+    "correct_digits": 26930.48768214296,
+    "log10_q": 21059.444201266262,
+    "working_digits": 42280
    },
    {
     "depth": 1000,
-    "delta": 0.2747312554364102,
-    "correct_digits": 109378.59285518463,
-    "log10_q": 85805.2176791871,
-    "working_digits": 171772
+    "delta": 0.2794113617725321,
+    "correct_digits": 27201.977721444262,
+    "log10_q": 21261.32261617396,
+    "working_digits": 42684
    },
    {
     "depth": 1010,
-    "delta": 0.2754047063308684,
-    "correct_digits": 110472.29199444616,
-    "log10_q": 86617.44107269053,
-    "working_digits": 173396
+    "delta": 0.27881938577766846,
+    "correct_digits": 27474.111118642977,
+    "log10_q": 21483.96515113475,
+    "working_digits": 43128
    },
    {
     "depth": 1020,
-    "delta": 0.2747011874813804,
-    "correct_digits": 111566.15388069104,
-    "log10_q": 87523.37800918594,
-    "working_digits": 175208
+    "delta": 0.2813751499101492,
+    "correct_digits": 27746.82932635446,
+    "log10_q": 21653.946799499023,
+    "working_digits": 43468
    },
    {
     "depth": 1030,
-    "delta": 0.2749622580840609,
-    "correct_digits": 112659.89018711312,
-    "log10_q": 88363.31387284503,
-    "working_digits": 176888
+    "delta": 0.2802446750118366,
+    "correct_digits": 28018.079621670113,
+    "log10_q": 21884.941346396205,
+    "working_digits": 43930
    },
    {
     "depth": 1040,
-    "delta": 0.27491665569510215,
-    "correct_digits": 113753.71664105878,
-    "log10_q": 89224.43371722891,
-    "working_digits": 178610
+    "delta": 0.28041520992125224,
+    "correct_digits": 28290.14958351456,
+    "log10_q": 22094.51228344472,
+    "working_digits": 44350
    },
    {
     "depth": 1050,
-    "delta": 0.2746433800613465,
-    "correct_digits": 114847.48972569889,
-    "log10_q": 90101.66413775393,
-    "working_digits": 180364
+    "delta": 0.27822149285796527,
+    "correct_digits": 28563.697547953532,
+    "log10_q": 22346.43816236276,
+    "working_digits": 44854
    },
    {
     "depth": 1060,
-    "delta": 0.2745556278424406,
-    "correct_digits": 115941.2809840568,
-    "log10_q": 90966.04216508105,
-    "working_digits": 182094
+    "delta": 0.2794200774404618,
+    "correct_digits": 28834.19013125217,
+    "log10_q": 22536.921719202874,
+    "working_digits": 45234
    },
    {
     "depth": 1070,
-    "delta": 0.27580872076320173,
-    "correct_digits": 117035.09071914146,
-    "log10_q": 91734.04195664212,
-    "working_digits": 183630
+    "delta": 0.2794100787572513,
+    "correct_digits": 29106.19855496294,
+    "log10_q": 22749.70241225167,
+    "working_digits": 45660
    },
    {
     "depth": 1080,
-    "delta": 0.27386536889569807,
-    "correct_digits": 118128.84678141303,
-    "log10_q": 92732.5992728869,
-    "working_digits": 185626
+    "delta": 0.27987226106280433,
+    "correct_digits": 29379.16261980647,
+    "log10_q": 22954.761591137267,
+    "working_digits": 46070
    },
    {
     "depth": 1090,
-    "delta": 0.2742009249993836,
-    "correct_digits": 119222.69329580328,
-    "log10_q": 93566.63533724946,
-    "working_digits": 187294
+    "delta": 0.2785589820494004,
+    "correct_digits": 29650.310491716547,
+    "log10_q": 23190.412728703457,
+    "working_digits": 46542
    },
    {
     "depth": 1100,
-    "delta": 0.27361808493414036,
-    "correct_digits": 120316.41392426305,
-    "log10_q": 94468.20467415449,
-    "working_digits": 189098
+    "delta": 0.27871533793558034,
+    "correct_digits": 29922.256553221003,
+    "log10_q": 23400.24840988373,
+    "working_digits": 46962
    },
    {
     "depth": 1110,
-    "delta": 0.27387949918965204,
-    "correct_digits": 121410.29760802779,
-    "log10_q": 95307.52138272108,
-    "working_digits": 190776
+    "delta": 0.27818316606717686,
+    "correct_digits": 30194.896799849637,
+    "log10_q": 23623.294064148784,
+    "working_digits": 47408
    },
    {
     "depth": 1120,
-    "delta": 0.2740921800913115,
-    "correct_digits": 122503.98231965114,
-    "log10_q": 96150.01507259195,
-    "working_digits": 192462
+    "delta": 0.279259593667068,
+    "correct_digits": 30466.442656346782,
+    "log10_q": 23815.684328004958,
+    "working_digits": 47792
    },
    {
     "depth": 1130,
-    "delta": 0.2747761510771384,
-    "correct_digits": 123597.90383815096,
-    "log10_q": 96956.55486942969,
-    "working_digits": 194074
+    "delta": 0.27932685086610304,
+    "correct_digits": 30738.322641150524,
+    "log10_q": 24026.95028275277,
+    "working_digits": 48214
    },
    {
     "depth": 1140,
-    "delta": 0.27439544155465306,
-    "correct_digits": 124691.55188780646,
-    "log10_q": 97843.68950323101,
-    "working_digits": 195848
+    "delta": 0.280365866679042,
+    "correct_digits": 31010.792517789232,
+    "log10_q": 24220.258697011108,
+    "working_digits": 48602
    },
    {
     "depth": 1150,
-    "delta": 0.27380235478987686,
-    "correct_digits": 125785.51220656022,
-    "log10_q": 98748.06066543148,
-    "working_digits": 197658
+    "delta": 0.2800156447481288,
+    "correct_digits": 31282.589776400593,
+    "log10_q": 24439.224555381217,
+    "working_digits": 49040
    },
    {
     "depth": 1160,
-    "delta": 0.27403903289583315,
-    "correct_digits": 126879.12255999906,
-    "log10_q": 99588.09681961512,
-    "working_digits": 199338
+    "delta": 0.2787202384790251,
+    "correct_digits": 31554.39625732674,
+    "log10_q": 24676.544022529233,
+    "working_digits": 49514
    },
    {
     "depth": 1170,
-    "delta": 0.27371842332578195,
-    "correct_digits": 127973.1229826954,
-    "log10_q": 100472.067168933,
-    "working_digits": 201106
+    "delta": 0.27798703469970426,
+    "correct_digits": 31826.749708524654,
+    "log10_q": 24903.812671310206,
+    "working_digits": 49968
    },
    {
     "depth": 1180,
-    "delta": 0.2738247438008584,
-    "correct_digits": 129066.69427683581,
-    "log10_q": 101322.17552292522,
-    "working_digits": 202806
+    "delta": 0.2779396703885088,
+    "correct_digits": 32098.757247414793,
+    "log10_q": 25117.584179585247,
+    "working_digits": 50396
    },
    {
     "depth": 1190,
-    "delta": 0.273702634055427,
-    "correct_digits": 130160.73650037873,
-    "log10_q": 102190.83561596418,
-    "working_digits": 204542
+    "delta": 0.2788684267356517,
+    "correct_digits": 32370.477128829472,
+    "log10_q": 25311.811951958218,
+    "working_digits": 50784
    },
    {
     "depth": 1200,
-    "delta": 0.2746523842062335,
-    "correct_digits": 131254.26698689448,
-    "log10_q": 102972.59755931863,
-    "working_digits": 206106
+    "delta": 0.28156311963174385,
+    "correct_digits": 32642.7404920182,
+    "log10_q": 25471.03610581277,
+    "working_digits": 51104
    },
    {
     "depth": 1210,
-    "delta": 0.27463689889484094,
-    "correct_digits": 132348.35317969075,
-    "log10_q": 103832.19981662373,
-    "working_digits": 207826
+    "delta": 0.27896915377319487,
+    "correct_digits": 32914.955299930116,
+    "log10_q": 25735.534905454857,
+    "working_digits": 51632
    },
    {
     "depth": 1220,
-    "delta": 0.27534843657492064,
-    "correct_digits": 133441.8406456207,
-    "log10_q": 104631.67305398709,
-    "working_digits": 209424
+    "delta": 0.27869341981015167,
+    "correct_digits": 33186.5652322758,
+    "log10_q": 25953.49652866989,
+    "working_digits": 52068
    },
    {
     "depth": 1230,
-    "delta": 0.27510903068510795,
-    "correct_digits": 134535.97355905775,
-    "log10_q": 105509.38807701207,
-    "working_digits": 211180
+    "delta": 0.27826790625124354,
+    "correct_digits": 33458.75309556711,
+    "log10_q": 26175.070915838824,
+    "working_digits": 52512
    },
    {
     "depth": 1240,
-    "delta": 0.2744977328267034,
-    "correct_digits": 135629.4152144323,
-    "log10_q": 106417.93368562558,
-    "working_digits": 212998
+    "delta": 0.2786975085620064,
+    "correct_digits": 33731.207029873556,
+    "log10_q": 26379.34836348191,
+    "working_digits": 52920
    },
    {
     "depth": 1250,
-    "delta": 0.27471865727404826,
-    "correct_digits": 136723.59834386056,
-    "log10_q": 107257.86240254797,
-    "working_digits": 214676
+    "delta": 0.28009881494776395,
+    "correct_digits": 34002.66079058552,
+    "log10_q": 26562.528137308713,
+    "working_digits": 53286
    },
    {
     "depth": 1260,
-    "delta": 0.27451572670754265,
-    "correct_digits": 137816.99065998822,
-    "log10_q": 108132.82862818097,
-    "working_digits": 216426
+    "delta": 0.2804360045406839,
+    "correct_digits": 34274.78147262756,
+    "log10_q": 26768.055061777617,
+    "working_digits": 53698
    },
    {
     "depth": 1270,
-    "delta": 0.2744819917548881,
-    "correct_digits": 138911.22848295295,
-    "log10_q": 108994.26542047896,
-    "working_digits": 218150
+    "delta": 0.27994445877215557,
+    "correct_digits": 34547.586340764705,
+    "log10_q": 26991.473031498597,
+    "working_digits": 54144
    },
    {
     "depth": 1280,
-    "delta": 0.2744438229607167,
-    "correct_digits": 140004.56695359063,
-    "log10_q": 109855.42432803342,
-    "working_digits": 219872
+    "delta": 0.2810249127734192,
+    "correct_digits": 34818.764304486576,
+    "log10_q": 27180.395913693777,
+    "working_digits": 54522
    },
    {
     "depth": 1290,
-    "delta": 0.2751801422113984,
-    "correct_digits": 141098.86529483763,
-    "log10_q": 110650.14316341694,
-    "working_digits": 221462
+    "delta": 0.2801534733268537,
+    "correct_digits": 35090.822147299164,
+    "log10_q": 27411.418145127074,
+    "working_digits": 54984
    },
    {
     "depth": 1300,
-    "delta": 0.2748560780784105,
-    "correct_digits": 142192.14407069463,
-    "log10_q": 111535.84041033144,
-    "working_digits": 223234
+    "delta": 0.2804251120309193,
+    "correct_digits": 35366.502466183665,
+    "log10_q": 27620.906630054946,
+    "working_digits": 55402
    },
    {
     "depth": 1310,
-    "delta": 0.2746124804619741,
-    "correct_digits": 143286.51068801407,
-    "log10_q": 112415.74430220619,
-    "working_digits": 224994
+    "delta": 0.27985091705574133,
+    "correct_digits": 35634.87662872892,
+    "log10_q": 27842.990268511807,
+    "working_digits": 55846
    },
    {
     "depth": 1320,
-    "delta": 0.2738540511051931,
-    "correct_digits": 144379.72199050762,
-    "log10_q": 113340.866534313,
-    "working_digits": 226844
+    "delta": 0.27939988183762343,
+    "correct_digits": 35906.87298383982,
+    "log10_q": 28065.4027670115,
+    "working_digits": 56292
    },
    {
     "depth": 1330,
-    "delta": 0.27345850093462787,
-    "correct_digits": 145474.1675748798,
-    "log10_q": 114235.49920795386,
-    "working_digits": 228632
+    "delta": 0.2795942908484341,
+    "correct_digits": 36179.74821518971,
+    "log10_q": 28274.390151585278,
+    "working_digits": 56710
    },
    {
     "depth": 1340,
-    "delta": 0.2731573900165145,
-    "correct_digits": 146567.3006956628,
-    "log10_q": 115121.1168744515,
-    "working_digits": 230404
+    "delta": 0.27877378476083226,
+    "correct_digits": 36450.999119750086,
+    "log10_q": 28504.64996556641,
+    "working_digits": 57170
    },
    {
     "depth": 1350,
-    "delta": 0.273700961524681,
-    "correct_digits": 147661.84072758156,
-    "log10_q": 115931.32547440591,
-    "working_digits": 232024
+    "delta": 0.2778875982408816,
+    "correct_digits": 36722.932627593436,
+    "log10_q": 28737.216542476504,
+    "working_digits": 57636
    },
    {
     "depth": 1360,
-    "delta": 0.2738268146992745,
-    "correct_digits": 148754.88017195577,
-    "log10_q": 116777.94693548972,
-    "working_digits": 233716
+    "delta": 0.2773829951100803,
+    "correct_digits": 36995.5326777368,
+    "log10_q": 28961.97367536481,
+    "working_digits": 58084
    },
    {
     "depth": 1370,
-    "delta": 0.2747791628675478,
-    "correct_digits": 149849.53880007582,
-    "log10_q": 117549.41025471209,
-    "working_digits": 235260
+    "delta": 0.2777745598670349,
+    "correct_digits": 37267.13391619283,
+    "log10_q": 29165.656514613067,
+    "working_digits": 58492
    },
    {
     "depth": 1380,
-    "delta": 0.2741233690997096,
-    "correct_digits": 150942.46040813535,
-    "log10_q": 118467.69635407494,
-    "working_digits": 237096
+    "delta": 0.27924543292640425,
+    "correct_digits": 37539.00022501048,
+    "log10_q": 29344.642754859164,
+    "working_digits": 58850
    },
    {
     "depth": 1390,
-    "delta": 0.27422866753142167,
-    "correct_digits": 152037.2801664034,
-    "log10_q": 119317.10849116824,
-    "working_digits": 238796
+    "delta": 0.2779236136468594,
+    "correct_digits": 37811.44429932798,
+    "log10_q": 29588.188132328207,
+    "working_digits": 59338
    },
    {
     "depth": 1400,
-    "delta": 0.2743333319871096,
-    "correct_digits": 153130.04139574186,
-    "log10_q": 120164.8246593073,
-    "working_digits": 240490
+    "delta": 0.27936906132000544,
+    "correct_digits": 38083.28449917362,
+    "log10_q": 29767.238907497653,
+    "working_digits": 59696
    },
    {
     "depth": 1410,
-    "delta": 0.27497977146428865,
-    "correct_digits": 154225.1168443973,
-    "log10_q": 120962.79509381772,
-    "working_digits": 242086
+    "delta": 0.2784323316336214,
+    "correct_digits": 38355.07527625603,
+    "log10_q": 30001.646803820033,
+    "working_digits": 60164
    },
    {
     "depth": 1420,
-    "delta": 0.27508139329940723,
-    "correct_digits": 155317.62312898785,
-    "log10_q": 121809.96754025809,
-    "working_digits": 243780
+    "delta": 0.27813176305801957,
+    "correct_digits": 38627.40949298759,
+    "log10_q": 30221.774162445356,
+    "working_digits": 60604
    },
    {
     "depth": 1430,
-    "delta": 0.2744804556394307,
-    "correct_digits": 156413.39093260473,
-    "log10_q": 122727.17893828289,
-    "working_digits": 245616
+    "delta": 0.27901489105038857,
+    "correct_digits": 38899.456925838735,
+    "log10_q": 30413.607533445236,
+    "working_digits": 60988
    },
    {
     "depth": 1440,
-    "delta": 0.2744799890197755,
-    "correct_digits": 157505.2056046777,
-    "log10_q": 123583.89850108017,
-    "working_digits": 247328
+    "delta": 0.27942557618876535,
+    "correct_digits": 39171.15755915444,
+    "log10_q": 30616.20643526604,
+    "working_digits": 61394
    },
    {
     "depth": 1450,
-    "delta": 0.27405459975873825,
-    "correct_digits": 158600.5088740386,
-    "log10_q": 124484.86030667135,
-    "working_digits": 249130
+    "delta": 0.2798072169435266,
+    "correct_digits": 39443.4052261412,
+    "log10_q": 30819.802157657075,
+    "working_digits": 61800
    },
    {
     "depth": 1460,
-    "delta": 0.2741490694895691,
-    "correct_digits": 159692.78882216357,
-    "log10_q": 125332.89286640326,
-    "working_digits": 250826
+    "delta": 0.27766708813486135,
+    "correct_digits": 39715.66299451081,
+    "log10_q": 31084.51596142133,
+    "working_digits": 62330
    },
    {
     "depth": 1470,
-    "delta": 0.2740203875909021,
-    "correct_digits": 160787.72208597886,
-    "log10_q": 126204.98357174567,
-    "working_digits": 252572
+    "delta": 0.2789822315878642,
+    "correct_digits": 39987.24709779383,
+    "log10_q": 31264.896501454456,
+    "working_digits": 62690
    },
    {
     "depth": 1480,
-    "delta": 0.2748608095334664,
-    "correct_digits": 161880.37278333644,
-    "log10_q": 126978.8604158099,
-    "working_digits": 254118
+    "delta": 0.27869595706758366,
+    "correct_digits": 40259.42128940841,
+    "log10_q": 31484.74902644942,
+    "working_digits": 63130
    },
    {
     "depth": 1490,
-    "delta": 0.2741473496478786,
-    "correct_digits": 162975.10852626263,
-    "log10_q": 127909.15318491396,
-    "working_digits": 255980
+    "delta": 0.2809595899768126,
+    "correct_digits": 40531.93066751444,
+    "log10_q": 31641.849582661802,
+    "working_digits": 63444
    },
    {
     "depth": 1500,
-    "delta": 0.2745272114342338,
-    "correct_digits": 164067.9574926523,
-    "log10_q": 128728.48537147004,
-    "working_digits": 257618
+    "delta": 0.2783817842477174,
+    "correct_digits": 40803.34416585865,
+    "log10_q": 31917.96431131877,
+    "working_digits": 63996
    },
    {
     "depth": 1510,
-    "delta": 0.2736898786268482,
-    "correct_digits": 165162.5570694467,
-    "log10_q": 129672.50493307423,
-    "working_digits": 259506
+    "delta": 0.2786483284108951,
+    "correct_digits": 41075.45229636567,
+    "log10_q": 32124.119966131944,
+    "working_digits": 64410
    },
    {
     "depth": 1520,
-    "delta": 0.2742164406030898,
-    "correct_digits": 166255.54295719348,
-    "log10_q": 130476.68956343422,
-    "working_digits": 261114
+    "delta": 0.27823069715516613,
+    "correct_digits": 41348.360501325486,
+    "log10_q": 32348.120408429022,
+    "working_digits": 64858
    },
    {
     "depth": 1530,
-    "delta": 0.27426969623171055,
-    "correct_digits": 167350.03799256694,
-    "log10_q": 131330.15600030115,
-    "working_digits": 262822
+    "delta": 0.2791258493981345,
+    "correct_digits": 41619.44932571321,
+    "log10_q": 32537.415568058732,
+    "working_digits": 65236
    },
    {
     "depth": 1540,
-    "delta": 0.2745478247253716,
-    "correct_digits": 168443.12918676797,
-    "log10_q": 132159.12806023,
-    "working_digits": 264480
+    "delta": 0.27889248595391564,
+    "correct_digits": 41891.49510036064,
+    "log10_q": 32756.072586597544,
+    "working_digits": 65674
    },
    {
     "depth": 1550,
-    "delta": 0.27478882682382666,
-    "correct_digits": 169537.53889846083,
-    "log10_q": 132992.64578657196,
-    "working_digits": 266146
+    "delta": 0.27734871594522703,
+    "correct_digits": 42165.0505268016,
+    "log10_q": 33009.81948034435,
+    "working_digits": 66180
    },
    {
     "depth": 1560,
-    "delta": 0.27441198459240845,
-    "correct_digits": 170630.71619404876,
-    "log10_q": 133889.7611266745,
-    "working_digits": 267942
+    "delta": 0.27922822785206486,
+    "correct_digits": 42435.563515785274,
+    "log10_q": 33172.785427849936,
+    "working_digits": 66506
    },
    {
     "depth": 1570,
-    "delta": 0.27445528446174067,
-    "correct_digits": 171725.05341796606,
-    "log10_q": 134743.88274869387,
-    "working_digits": 269650
+    "delta": 0.2797442081031874,
+    "correct_digits": 42707.547750724145,
+    "log10_q": 33371.94064275115,
+    "working_digits": 66904
    },
    {
     "depth": 1580,
-    "delta": 0.27532971208069873,
-    "correct_digits": 172818.30399475808,
-    "log10_q": 135508.72559285493,
-    "working_digits": 271178
+    "delta": 0.2796003219010938,
+    "correct_digits": 42980.35085314147,
+    "log10_q": 33588.887184152816,
+    "working_digits": 67338
    },
    {
     "depth": 1590,
-    "delta": 0.27535671345877616,
-    "correct_digits": 173912.5778420511,
-    "log10_q": 136363.87059930788,
-    "working_digits": 272888
+    "delta": 0.27919282120354205,
+    "correct_digits": 43251.688217791765,
+    "log10_q": 33811.70336548478,
+    "working_digits": 67784
    },
    {
     "depth": 1600,
-    "delta": 0.2754207536674029,
-    "correct_digits": 175005.89260790226,
-    "log10_q": 137214.24251932732,
-    "working_digits": 274590
+    "delta": 0.279457253118743,
+    "correct_digits": 43523.609007565035,
+    "log10_q": 34017.24356282634,
+    "working_digits": 68196
    },
    {
     "depth": 1610,
-    "delta": 0.27473963549963243,
-    "correct_digits": 176100.1098202367,
-    "log10_q": 138145.94362339296,
-    "working_digits": 276452
+    "delta": 0.2798510400409365,
+    "correct_digits": 43796.172831728116,
+    "log10_q": 34219.742346208724,
+    "working_digits": 68600
    },
    {
     "depth": 1620,
-    "delta": 0.2748929770489719,
-    "correct_digits": 177193.4820560645,
-    "log10_q": 138986.94654842236,
-    "working_digits": 278136
+    "delta": 0.28023328164877903,
+    "correct_digits": 44067.82577621146,
+    "log10_q": 34421.71548567903,
+    "working_digits": 69004
    },
    {
     "depth": 1630,
-    "delta": 0.27510813755921976,
-    "correct_digits": 178287.64776904034,
-    "log10_q": 139821.59043413692,
-    "working_digits": 279804
+    "delta": 0.2803261711063397,
+    "correct_digits": 44339.678095436764,
+    "log10_q": 34631.548660075045,
+    "working_digits": 69424
    },
    {
     "depth": 1640,
-    "delta": 0.2753139036111805,
-    "correct_digits": 179381.07236576636,
-    "log10_q": 140656.40769525894,
-    "working_digits": 281474
+    "delta": 0.2796939115479756,
+    "correct_digits": 44612.09803127165,
+    "log10_q": 34861.53808242069,
+    "working_digits": 69884
    },
    {
     "depth": 1650,
-    "delta": 0.2749020145437806,
-    "correct_digits": 180475.19057105514,
-    "log10_q": 141560.04815447528,
-    "working_digits": 283282
+    "delta": 0.2807402986377942,
+    "correct_digits": 44883.98004628807,
+    "log10_q": 35045.340647145276,
+    "working_digits": 70252
    },
    {
     "depth": 1660,
-    "delta": 0.27502010510628283,
-    "correct_digits": 181568.66356790997,
-    "log10_q": 142404.54941906568,
-    "working_digits": 284970
+    "delta": 0.27986994117979086,
+    "correct_digits": 45155.75457325092,
+    "log10_q": 35281.51816084227,
+    "working_digits": 70724
    },
    {
     "depth": 1670,
-    "delta": 0.2746751726900997,
-    "correct_digits": 182662.737408547,
-    "log10_q": 143301.4004838989,
-    "working_digits": 286764
+    "delta": 0.2797620770175254,
+    "correct_digits": 45428.070418050826,
+    "log10_q": 35497.27815338969,
+    "working_digits": 71156
    },
    {
     "depth": 1680,
-    "delta": 0.27487214119678227,
-    "correct_digits": 183756.2556983183,
-    "log10_q": 144137.00775186575,
-    "working_digits": 288436
+    "delta": 0.2789975432701777,
+    "correct_digits": 45700.157856763595,
+    "log10_q": 35731.231930216316,
+    "working_digits": 71624
    },
    {
     "depth": 1690,
-    "delta": 0.27440602687699006,
-    "correct_digits": 184850.2876652981,
-    "log10_q": 145048.19011118854,
-    "working_digits": 290258
+    "delta": 0.279078387910122,
+    "correct_digits": 45971.838268399886,
+    "log10_q": 35941.37677794164,
+    "working_digits": 72044
    },
    {
     "depth": 1700,
-    "delta": 0.27413070805082657,
-    "correct_digits": 185943.84879839479,
-    "log10_q": 145937.81283464463,
-    "working_digits": 292036
+    "delta": 0.2781294008662269,
+    "correct_digits": 46244.07072842734,
+    "log10_q": 36181.05545266882,
+    "working_digits": 72524
    },
    {
     "depth": 1710,
-    "delta": 0.27432232782300603,
-    "correct_digits": 187037.84086564262,
-    "log10_q": 146774.35746195354,
-    "working_digits": 293710
+    "delta": 0.2791241589130678,
+    "correct_digits": 46516.37291271569,
+    "log10_q": 36365.79966736212,
+    "working_digits": 72892
    },
    {
     "depth": 1720,
-    "delta": 0.2735393708856086,
-    "correct_digits": 188131.44291593033,
-    "log10_q": 147723.30343042736,
-    "working_digits": 295608
+    "delta": 0.280410415157345,
+    "correct_digits": 46787.9292525679,
+    "log10_q": 36541.35322448021,
+    "working_digits": 73244
    },
    {
     "depth": 1730,
-    "delta": 0.2735660544429433,
-    "correct_digits": 189225.39663497018,
-    "log10_q": 148579.17732248068,
-    "working_digits": 297320
+    "delta": 0.2808693479957438,
+    "correct_digits": 47060.09005147145,
+    "log10_q": 36740.74184467706,
+    "working_digits": 73642
    },
    {
     "depth": 1740,
-    "delta": 0.27382442945284813,
-    "correct_digits": 190319.0381060944,
-    "log10_q": 149407.59001445989,
-    "working_digits": 298976
+    "delta": 0.2794648737900419,
+    "correct_digits": 47332.65956099174,
+    "log10_q": 36994.106310072064,
+    "working_digits": 74150
    },
    {
     "depth": 1750,
-    "delta": 0.2737542375919238,
-    "correct_digits": 191412.95467322107,
-    "log10_q": 150274.63620854667,
-    "working_digits": 300710
+    "delta": 0.2797385291431053,
+    "correct_digits": 47604.02785166855,
+    "log10_q": 37198.2453974747,
+    "working_digits": 74558
    },
    {
     "depth": 1760,
-    "delta": 0.2734974705735858,
-    "correct_digits": 192506.6344326588,
-    "log10_q": 151163.73521021084,
-    "working_digits": 302490
+    "delta": 0.28043627544275673,
+    "correct_digits": 47876.12357039662,
+    "log10_q": 37390.477361977064,
+    "working_digits": 74942
    },
    {
     "depth": 1770,
-    "delta": 0.27356859881503376,
-    "correct_digits": 193600.51473656198,
-    "log10_q": 152014.20238901436,
-    "working_digits": 304190
+    "delta": 0.2798668753142181,
+    "correct_digits": 48149.16144023749,
+    "log10_q": 37620.445039189304,
+    "working_digits": 75402
    },
    {
     "depth": 1780,
-    "delta": 0.27478874928819075,
-    "correct_digits": 194694.23196951795,
-    "log10_q": 152726.66320457423,
-    "working_digits": 305614
+    "delta": 0.28026425819603384,
+    "correct_digits": 48420.1346929677,
+    "log10_q": 37820.422137844,
+    "working_digits": 75802
    },
    {
     "depth": 1790,
-    "delta": 0.2745333418015119,
-    "correct_digits": 195788.07662438916,
-    "log10_q": 153615.50004462732,
-    "working_digits": 307392
+    "delta": 0.28051804327169083,
+    "correct_digits": 48692.16843017992,
+    "log10_q": 38025.36690992083,
+    "working_digits": 76212
    },
    {
     "depth": 1800,
-    "delta": 0.27412668940364354,
-    "correct_digits": 196881.83080259373,
-    "log10_q": 154522.96262214278,
-    "working_digits": 309208
+    "delta": 0.27848048777143164,
+    "correct_digits": 48965.430964345855,
+    "log10_q": 38299.709250705404,
+    "working_digits": 76760
    },
    {
     "depth": 1810,
-    "delta": 0.27403532589902424,
-    "correct_digits": 197975.64016990416,
-    "log10_q": 155392.58303548407,
-    "working_digits": 310946
+    "delta": 0.2790355547034388,
+    "correct_digits": 49236.250804789044,
+    "log10_q": 38494.82574876905,
+    "working_digits": 77150
    },
    {
     "depth": 1820,
-    "delta": 0.2745474042982484,
-    "correct_digits": 199069.43103224257,
-    "log10_q": 156188.33035233238,
-    "working_digits": 312538
+    "delta": 0.27782435177843146,
+    "correct_digits": 49508.22284744715,
+    "log10_q": 38744.15351260393,
+    "working_digits": 77650
    },
    {
     "depth": 1830,
-    "delta": 0.2740552367694592,
-    "correct_digits": 200163.20523314606,
-    "log10_q": 157107.1641608626,
-    "working_digits": 314376
+    "delta": 0.27866281178545593,
+    "correct_digits": 49780.96537088679,
+    "log10_q": 38932.05066422111,
+    "working_digits": 78026
    },
    {
     "depth": 1840,
-    "delta": 0.2740157767546052,
-    "correct_digits": 201257.03277632987,
-    "log10_q": 157970.59694896935,
-    "working_digits": 316102
+    "delta": 0.27965003975988517,
+    "correct_digits": 50052.37780591573,
+    "log10_q": 39114.114211497705,
+    "working_digits": 78390
    },
    {
     "depth": 1850,
-    "delta": 0.27457440485734924,
-    "correct_digits": 202350.77169575228,
-    "log10_q": 158759.4815372112,
-    "working_digits": 317680
+    "delta": 0.2779899337473312,
+    "correct_digits": 50324.28568795334,
+    "log10_q": 39377.68550366599,
+    "working_digits": 78916
    },
    {
     "depth": 1860,
-    "delta": 0.2746174090257629,
-    "correct_digits": 203444.63617420272,
-    "log10_q": 159612.31561218278,
-    "working_digits": 319386
+    "delta": 0.2778955493371513,
+    "correct_digits": 50596.81654645397,
+    "log10_q": 39593.85927331753,
+    "working_digits": 79348
    },
    {
     "depth": 1870,
-    "delta": 0.2745721530017078,
-    "correct_digits": 204538.3394569587,
-    "log10_q": 160476.07738428647,
-    "working_digits": 321114
+    "delta": 0.279378077102901,
+    "correct_digits": 50868.51827027779,
+    "log10_q": 39760.34854799721,
+    "working_digits": 79682
    },
    {
     "depth": 1880,
-    "delta": 0.2743801394591263,
-    "correct_digits": 205632.24139189243,
-    "log10_q": 161358.63626936864,
-    "working_digits": 322878
+    "delta": 0.2784272118091266,
+    "correct_digits": 51140.35624950789,
+    "log10_q": 40002.556091666884,
+    "working_digits": 80166
    },
    {
     "depth": 1890,
-    "delta": 0.27435193276028186,
-    "correct_digits": 206725.90843050546,
-    "log10_q": 162220.4220954343,
-    "working_digits": 324602
+    "delta": 0.2785256144881645,
+    "correct_digits": 51412.753492928285,
+    "log10_q": 40212.533022664924,
+    "working_digits": 80586
    },
    {
     "depth": 1900,
-    "delta": 0.27390443497540934,
-    "correct_digits": 207819.8486290296,
-    "log10_q": 163136.13715697697,
-    "working_digits": 326434
+    "delta": 0.2787416203761123,
+    "correct_digits": 51684.67647948418,
+    "log10_q": 40418.38918505079,
+    "working_digits": 80998
    },
    {
     "depth": 1910,
-    "delta": 0.2746385274170611,
-    "correct_digits": 208913.47854221505,
-    "log10_q": 163900.17565651273,
-    "working_digits": 327962
+    "delta": 0.2793672096898309,
+    "correct_digits": 51956.43414730446,
+    "log10_q": 40611.040953520096,
+    "working_digits": 81384
    },
    {
     "depth": 1920,
-    "delta": 0.2748704365343146,
-    "correct_digits": 210007.4581281939,
-    "log10_q": 164728.4713096736,
-    "working_digits": 329618
+    "delta": 0.2777162029259197,
+    "correct_digits": 52228.73238873541,
+    "log10_q": 40876.629934827215,
+    "working_digits": 81914
    },
    {
     "depth": 1930,
-    "delta": 0.2744238322220261,
-    "correct_digits": 211101.04972807632,
-    "log10_q": 165644.30481499265,
-    "working_digits": 331450
+    "delta": 0.2779790593503469,
+    "correct_digits": 52500.86016825086,
+    "log10_q": 41081.15839937109,
+    "working_digits": 82324
    },
    {
     "depth": 1940,
-    "delta": 0.27397435845477786,
-    "correct_digits": 212195.07018780027,
-    "log10_q": 166561.49221494127,
-    "working_digits": 333284
+    "delta": 0.27893618528691616,
+    "correct_digits": 52772.51925739686,
+    "log10_q": 41262.82441962332,
+    "working_digits": 82686
    },
    {
     "depth": 1950,
-    "delta": 0.2738656212256233,
-    "correct_digits": 213288.62193271538,
-    "log10_q": 167434.16132661165,
-    "working_digits": 335030
+    "delta": 0.2787808256837502,
+    "correct_digits": 53044.736949846396,
+    "log10_q": 41480.7102862869,
+    "working_digits": 83122
    },
    {
     "depth": 1960,
-    "delta": 0.2748019837738022,
-    "correct_digits": 214382.68518025734,
-    "log10_q": 168169.4003531586,
-    "working_digits": 336500
+    "delta": 0.27921923840001045,
+    "correct_digits": 53317.08538657683,
+    "log10_q": 41679.396139526034,
+    "working_digits": 83520
    },
    {
     "depth": 1970,
-    "delta": 0.2738898780843495,
-    "correct_digits": 215476.19510816518,
-    "log10_q": 169148.21195706024,
-    "working_digits": 338458
+    "delta": 0.27837798306776695,
+    "correct_digits": 53588.611699438305,
+    "log10_q": 41919.222960051215,
+    "working_digits": 84000
    },
    {
     "depth": 1980,
-    "delta": 0.2737694479402942,
-    "correct_digits": 216570.30357821274,
-    "log10_q": 170023.15758822009,
-    "working_digits": 340208
+    "delta": 0.2790697330086822,
+    "correct_digits": 53860.75935346977,
+    "log10_q": 42109.32208267973,
+    "working_digits": 84380
    },
    {
     "depth": 1990,
-    "delta": 0.273838681382902,
-    "correct_digits": 217663.76921286908,
-    "log10_q": 170872.3187590515,
-    "working_digits": 341906
+    "delta": 0.2788248661243212,
+    "correct_digits": 54133.39505533489,
+    "log10_q": 42330.57746163054,
+    "working_digits": 84822
    },
    {
     "depth": 2000,
-    "delta": 0.2740733022008917,
-    "correct_digits": 218757.92599363127,
-    "log10_q": 171699.63895777345,
-    "working_digits": 343560
+    "delta": 0.2787045263410391,
+    "correct_digits": 54404.71185333666,
+    "log10_q": 42546.7422165256,
+    "working_digits": 85254
    },
    {
     "depth": 2010,
-    "delta": 0.27428953902622655,
-    "correct_digits": 219851.34421086963,
-    "log10_q": 172528.56393914478,
-    "working_digits": 345218
+    "delta": 0.27813834819272343,
+    "correct_digits": 54676.7952772328,
+    "log10_q": 42778.463970309094,
+    "working_digits": 85718
    },
    {
     "depth": 2020,
-    "delta": 0.274635975591077,
-    "correct_digits": 220945.55323805404,
-    "log10_q": 173340.12021400596,
-    "working_digits": 346842
+    "delta": 0.27848186282905074,
+    "correct_digits": 54950.01031132982,
+    "log10_q": 42980.67255309771,
+    "working_digits": 86122
    },
    {
     "depth": 2030,
-    "delta": 0.2744431801150006,
-    "correct_digits": 222038.9200711456,
-    "log10_q": 174224.2600812613,
-    "working_digits": 348610
+    "delta": 0.278943208406673,
+    "correct_digits": 55220.820414982205,
+    "log10_q": 43176.913604926325,
+    "working_digits": 86514
    },
    {
     "depth": 2040,
-    "delta": 0.27388618038679097,
-    "correct_digits": 223133.18641950443,
-    "log10_q": 175159.4372047857,
-    "working_digits": 350480
+    "delta": 0.2789885011966663,
+    "correct_digits": 55492.8421255338,
+    "log10_q": 43388.06961408391,
+    "working_digits": 86938
    },
    {
     "depth": 2050,
-    "delta": 0.27388359563775266,
-    "correct_digits": 224226.49676706886,
-    "log10_q": 176018.04241368923,
-    "working_digits": 352198
+    "delta": 0.2795015900846569,
+    "correct_digits": 55765.93536410354,
+    "log10_q": 43584.10790283883,
+    "working_digits": 87330
    },
    {
     "depth": 2060,
-    "delta": 0.27363412505105206,
-    "correct_digits": 225320.82710653017,
-    "log10_q": 176911.7383671692,
-    "working_digits": 353986
+    "delta": 0.2799725652280834,
+    "correct_digits": 56036.93850962842,
+    "log10_q": 43779.79656122002,
+    "working_digits": 87720
    },
    {
     "depth": 2070,
-    "delta": 0.2736174543809411,
-    "correct_digits": 226414.0742759599,
-    "log10_q": 177772.43354913936,
-    "working_digits": 355706
+    "delta": 0.27922328969450244,
+    "correct_digits": 56308.89826677445,
+    "log10_q": 44018.037132689984,
+    "working_digits": 88198
    },
    {
     "depth": 2080,
-    "delta": 0.27389054177155175,
-    "correct_digits": 227508.47762430314,
-    "log10_q": 178593.42711495105,
-    "working_digits": 357348
+    "delta": 0.27997634278662786,
+    "correct_digits": 56581.588655655694,
+    "log10_q": 44205.183146176205,
+    "working_digits": 88572
    },
    {
     "depth": 2090,
-    "delta": 0.2743837989716152,
-    "correct_digits": 228601.65257872446,
-    "log10_q": 179382.10824964842,
-    "working_digits": 358926
+    "delta": 0.279749735825698,
+    "correct_digits": 56853.06790655304,
+    "log10_q": 44425.14525691329,
+    "working_digits": 89012
    },
    {
     "depth": 2100,
-    "delta": 0.2737405380169825,
-    "correct_digits": 229696.14163527355,
-    "log10_q": 180331.97089956407,
-    "working_digits": 360826
+    "delta": 0.28003724979287636,
+    "correct_digits": 57124.9626643076,
+    "log10_q": 44627.57835645098,
+    "working_digits": 89416
    },
    {
     "depth": 2110,
-    "delta": 0.2739201752605679,
-    "correct_digits": 230789.23165955915,
-    "log10_q": 181164.5942512477,
-    "working_digits": 362490
+    "delta": 0.27879341754771086,
+    "correct_digits": 57397.46327584855,
+    "log10_q": 44884.07782542179,
+    "working_digits": 89930
    },
    {
     "depth": 2120,
-    "delta": 0.2737111065738806,
-    "correct_digits": 231883.8254124387,
-    "log10_q": 182053.70449832728,
-    "working_digits": 364268
+    "delta": 0.2796035647199494,
+    "correct_digits": 57669.21143647491,
+    "log10_q": 45068.02968237763,
+    "working_digits": 90298
    },
    {
     "depth": 2130,
-    "delta": 0.27349956326092956,
-    "correct_digits": 232976.81150571516,
-    "log10_q": 182942.19976735095,
-    "working_digits": 366046
+    "delta": 0.27996865882319927,
+    "correct_digits": 57941.03468492161,
+    "log10_q": 45267.54173668009,
+    "working_digits": 90696
    },
    {
     "depth": 2140,
-    "delta": 0.2740199593762651,
-    "correct_digits": 234071.541117302,
-    "log10_q": 183726.74571903783,
-    "working_digits": 367616
+    "delta": 0.2791212922824189,
+    "correct_digits": 58213.41050099066,
+    "log10_q": 45510.46945447739,
+    "working_digits": 91182
    },
    {
     "depth": 2150,
-    "delta": 0.27429578287508694,
-    "correct_digits": 235164.3921073129,
-    "log10_q": 184544.5894647247,
-    "working_digits": 369250
+    "delta": 0.27844957235467516,
+    "correct_digits": 58485.37386936254,
+    "log10_q": 45747.110511088016,
+    "working_digits": 91656
    },
    {
     "depth": 2160,
-    "delta": 0.27458939401466254,
-    "correct_digits": 236259.31770079202,
-    "log10_q": 185361.12006756128,
-    "working_digits": 370884
+    "delta": 0.2781265870427376,
+    "correct_digits": 58757.11399797653,
+    "log10_q": 45971.27905298149,
+    "working_digits": 92104
    },
    {
     "depth": 2170,
-    "delta": 0.27449449008115967,
-    "correct_digits": 237351.97345720133,
-    "log10_q": 186232.24761221744,
-    "working_digits": 372626
+    "delta": 0.2778960863548006,
+    "correct_digits": 59029.39532271642,
+    "log10_q": 46192.641133363046,
+    "working_digits": 92546
    },
    {
     "depth": 2180,
-    "delta": 0.27431220211447016,
-    "correct_digits": 238447.26143860817,
-    "log10_q": 187118.40084631686,
-    "working_digits": 374398
+    "delta": 0.2777252896082995,
+    "correct_digits": 59301.56401154452,
+    "log10_q": 46411.82615218022,
+    "working_digits": 92984
    },
    {
     "depth": 2190,
-    "delta": 0.27433236370598024,
-    "correct_digits": 239539.555550858,
-    "log10_q": 187972.5904898431,
-    "working_digits": 376106
+    "delta": 0.2783637208865038,
+    "correct_digits": 59573.200527540466,
+    "log10_q": 46601.13514972749,
+    "working_digits": 93364
    },
    {
     "depth": 2200,
-    "delta": 0.27446575835707737,
-    "correct_digits": 240635.36953753515,
-    "log10_q": 188812.73816861105,
-    "working_digits": 377786
+    "delta": 0.27774502443609583,
+    "correct_digits": 59845.403846850364,
+    "log10_q": 46836.734013706526,
+    "working_digits": 93834
    },
    {
     "depth": 2210,
-    "delta": 0.2748746284574803,
-    "correct_digits": 241727.1383863265,
-    "log10_q": 189608.55678711046,
-    "working_digits": 379378
+    "delta": 0.2787904569807869,
+    "correct_digits": 60117.80083314946,
+    "log10_q": 47011.45563369863,
+    "working_digits": 94184
    },
    {
     "depth": 2220,
-    "delta": 0.2747446424079928,
-    "correct_digits": 242822.22374376864,
-    "log10_q": 190486.95375183332,
-    "working_digits": 381134
+    "delta": 0.27854436011016753,
+    "correct_digits": 60389.29444186036,
+    "log10_q": 47232.8503616854,
+    "working_digits": 94626
    },
    {
     "depth": 2230,
-    "delta": 0.2748285294461757,
-    "correct_digits": 243914.72196418946,
-    "log10_q": 191331.39581536775,
-    "working_digits": 382824
+    "delta": 0.2781749493439236,
+    "correct_digits": 60661.429169922936,
+    "log10_q": 47459.41015434541,
+    "working_digits": 95080
    },
    {
     "depth": 2240,
-    "delta": 0.2744643100966445,
-    "correct_digits": 245009.5483891984,
-    "log10_q": 192245.12326329402,
-    "working_digits": 384652
+    "delta": 0.27851351522313245,
+    "correct_digits": 60934.13910210355,
+    "log10_q": 47660.144673143346,
+    "working_digits": 95482
    },
    {
     "depth": 2250,
-    "delta": 0.2746590655151446,
-    "correct_digits": 246102.30628757668,
-    "log10_q": 193073.04435018956,
-    "working_digits": 386308
+    "delta": 0.27789428481956496,
+    "correct_digits": 61205.3961769248,
+    "log10_q": 47895.50818404891,
+    "working_digits": 95952
    },
    {
     "depth": 2260,
-    "delta": 0.2744699685746269,
-    "correct_digits": 247196.97081381216,
-    "log10_q": 193960.6086522999,
-    "working_digits": 388082
+    "delta": 0.2772618228885891,
+    "correct_digits": 61477.467401015274,
+    "log10_q": 48132.23592793295,
+    "working_digits": 96426
    },
    {
     "depth": 2270,
-    "delta": 0.2748278074544329,
-    "correct_digits": 248289.89136220817,
-    "log10_q": 194763.47308268375,
-    "working_digits": 389688
+    "delta": 0.2779473244334445,
+    "correct_digits": 61750.971403241376,
+    "log10_q": 48320.43560998696,
+    "working_digits": 96802
    },
    {
     "depth": 2280,
-    "delta": 0.275152375078795,
-    "correct_digits": 249384.43725488073,
-    "log10_q": 195572.26424761245,
-    "working_digits": 391306
+    "delta": 0.27859138822353247,
+    "correct_digits": 62021.506501478325,
+    "log10_q": 48507.68359049458,
+    "working_digits": 97176
    },
    {
     "depth": 2290,
-    "delta": 0.27490078985241606,
-    "correct_digits": 250477.47719647372,
-    "log10_q": 196468.21085228855,
-    "working_digits": 393098
+    "delta": 0.27808261351476543,
+    "correct_digits": 62293.516176247955,
+    "log10_q": 48739.81972490723,
+    "working_digits": 97640
    },
    {
     "depth": 2300,
-    "delta": 0.27479371704753336,
-    "correct_digits": 251571.92892482987,
-    "log10_q": 197343.2450761361,
-    "working_digits": 394848
+    "delta": 0.2790346018042117,
+    "correct_digits": 62566.49074105482,
+    "log10_q": 48916.96491463035,
+    "working_digits": 97994
    },
    {
     "depth": 2310,
-    "delta": 0.27512711638735576,
-    "correct_digits": 252665.06380155086,
-    "log10_q": 198148.9222167845,
-    "working_digits": 396460
+    "delta": 0.2794923115982203,
+    "correct_digits": 62837.62664566509,
+    "log10_q": 49111.374938372464,
+    "working_digits": 98384
    },
    {
     "depth": 2320,
-    "delta": 0.2746269900789237,
-    "correct_digits": 253759.43702114793,
-    "log10_q": 199085.25317311488,
-    "working_digits": 398332
+    "delta": 0.279332422794032,
+    "correct_digits": 63109.57400221306,
+    "log10_q": 49330.08253193743,
+    "working_digits": 98822
    },
    {
     "depth": 2330,
-    "delta": 0.2753032390635934,
-    "correct_digits": 254852.65119156585,
-    "log10_q": 199836.9041849956,
-    "working_digits": 399834
+    "delta": 0.27933940101238003,
+    "correct_digits": 63382.21868520538,
+    "log10_q": 49542.927103667025,
+    "working_digits": 99246
    },
    {
     "depth": 2340,
-    "delta": 0.2746898836921396,
-    "correct_digits": 255946.9567051769,
-    "log10_q": 200791.54936401194,
-    "working_digits": 401744
+    "delta": 0.2796955665293024,
+    "correct_digits": 63653.75854459403,
+    "log10_q": 49741.32927351709,
+    "working_digits": 99644
    },
    {
     "depth": 2350,
-    "delta": 0.2746270099242468,
-    "correct_digits": 257040.23938380115,
-    "log10_q": 201659.1813781488,
-    "working_digits": 403480
+    "delta": 0.27888179097068433,
+    "correct_digits": 63925.639932750426,
+    "log10_q": 49985.57363478466,
+    "working_digits": 100132
    },
    {
     "depth": 2360,
-    "delta": 0.27463297710330115,
-    "correct_digits": 258134.48503028302,
-    "log10_q": 202516.71631540003,
-    "working_digits": 405194
+    "delta": 0.27888106596486306,
+    "correct_digits": 64198.1125936355,
+    "log10_q": 50198.65748438513,
+    "working_digits": 100558
    },
    {
     "depth": 2370,
-    "delta": 0.2744266665111708,
-    "correct_digits": 259227.82839895764,
-    "log10_q": 203407.4107289448,
-    "working_digits": 406976
+    "delta": 0.27918878881914916,
+    "correct_digits": 64469.9053175494,
+    "log10_q": 50399.05437028037,
+    "working_digits": 100960
    },
    {
     "depth": 2380,
-    "delta": 0.274141083497756,
-    "correct_digits": 260322.02006854521,
-    "log10_q": 204311.77005446877,
-    "working_digits": 408786
+    "delta": 0.27863601646685476,
+    "correct_digits": 64741.71339986197,
+    "log10_q": 50633.41917957011,
+    "working_digits": 101428
    },
    {
     "depth": 2390,
-    "delta": 0.2742743525159135,
-    "correct_digits": 261415.41826147918,
-    "log10_q": 205148.4578225587,
-    "working_digits": 410458
+    "delta": 0.2794056656090828,
+    "correct_digits": 65014.06890154119,
+    "log10_q": 50815.836328651974,
+    "working_digits": 101792
    },
    {
     "depth": 2400,
-    "delta": 0.27430535374167375,
-    "correct_digits": 262509.5604896219,
-    "log10_q": 206002.0855431779,
-    "working_digits": 412166
+    "delta": 0.2795540468032275,
+    "correct_digits": 65286.07229688851,
+    "log10_q": 51022.52027571316,
+    "working_digits": 102206
    },
    {
     "depth": 2410,
-    "delta": 0.2745890448486574,
-    "correct_digits": 263603.00899995124,
-    "log10_q": 206814.11790358755,
-    "working_digits": 413790
+    "delta": 0.27911491018203954,
+    "correct_digits": 65557.79412528162,
+    "log10_q": 51252.466532464736,
+    "working_digits": 102666
    },
    {
     "depth": 2420,
-    "delta": 0.27420955017248816,
-    "correct_digits": 264697.10533703055,
-    "log10_q": 207734.35994197254,
-    "working_digits": 415630
+    "delta": 0.2792175850397295,
+    "correct_digits": 65830.05914815565,
+    "log10_q": 51461.18996332522,
+    "working_digits": 103084
    },
    {
     "depth": 2430,
-    "delta": 0.2738404244602111,
-    "correct_digits": 265790.6006475888,
-    "log10_q": 208652.98003100927,
-    "working_digits": 417468
+    "delta": 0.27930655847344027,
+    "correct_digits": 66102.26956672323,
+    "log10_q": 51670.39059473061,
+    "working_digits": 103502
    },
    {
     "depth": 2440,
-    "delta": 0.27454819543998,
-    "correct_digits": 266884.6539002524,
-    "log10_q": 209395.49783609604,
-    "working_digits": 418952
+    "delta": 0.27950936103359186,
+    "correct_digits": 66373.88208069706,
+    "log10_q": 51874.47947006814,
+    "working_digits": 103910
    },
    {
     "depth": 2450,
-    "delta": 0.2746201770454286,
-    "correct_digits": 267978.19324283086,
-    "log10_q": 210241.60614184276,
-    "working_digits": 420644
+    "delta": 0.2787184922308014,
+    "correct_digits": 66646.0713805644,
+    "log10_q": 52119.42408394854,
+    "working_digits": 104400
    },
    {
     "depth": 2460,
-    "delta": 0.27394825715278687,
-    "correct_digits": 269072.20563727344,
-    "log10_q": 211211.2514197687,
-    "working_digits": 422584
+    "delta": 0.279518155723649,
+    "correct_digits": 66918.51978588398,
+    "log10_q": 52299.78135639451,
+    "working_digits": 104760
    },
    {
     "depth": 2470,
-    "delta": 0.27456302983473213,
-    "correct_digits": 270165.78683006816,
-    "log10_q": 211967.38058932993,
-    "working_digits": 424096
+    "delta": 0.2800189774077128,
+    "correct_digits": 67189.9774838325,
+    "log10_q": 52491.39166663393,
+    "working_digits": 105144
    },
    {
     "depth": 2480,
-    "delta": 0.27444889920002125,
-    "correct_digits": 271259.76012543094,
-    "log10_q": 212844.7521871628,
-    "working_digits": 425850
+    "delta": 0.279322776716355,
+    "correct_digits": 67462.09947777486,
+    "log10_q": 52732.6650518411,
+    "working_digits": 105626
    },
    {
     "depth": 2490,
-    "delta": 0.27431595549524773,
-    "correct_digits": 272353.3814605338,
-    "log10_q": 213725.15998568575,
-    "working_digits": 427612
+    "delta": 0.2786897799459179,
+    "correct_digits": 67734.89468895493,
+    "log10_q": 52972.109225601045,
+    "working_digits": 106106
    },
    {
     "depth": 2500,
-    "delta": 0.2741431404546322,
-    "correct_digits": 273447.3170289967,
-    "log10_q": 214612.71371082126,
-    "working_digits": 429388
+    "delta": 0.2787420288889268,
+    "correct_digits": 68006.08082919006,
+    "log10_q": 53182.01739898952,
+    "working_digits": 106526
    },
    {
     "depth": 2510,
-    "delta": 0.2746681149730732,
-    "correct_digits": 274540.9771934006,
-    "log10_q": 215382.32106731576,
-    "working_digits": 430926
+    "delta": 0.2784649874199331,
+    "correct_digits": 68278.13992729767,
+    "log10_q": 53406.34323126017,
+    "working_digits": 106974
    },
    {
     "depth": 2520,
-    "delta": 0.27468294557924644,
-    "correct_digits": 275634.87607709237,
-    "log10_q": 216237.98846060288,
-    "working_digits": 432638
+    "delta": 0.2789925771125695,
+    "correct_digits": 68552.7071659098,
+    "log10_q": 53598.987509898725,
+    "working_digits": 107358
    },
    {
     "depth": 2530,
-    "delta": 0.2741658313776711,
-    "correct_digits": 276728.57409713924,
-    "log10_q": 217184.11158297266,
-    "working_digits": 434530
+    "delta": 0.27875300869895975,
+    "correct_digits": 68822.19296316321,
+    "log10_q": 53819.77011587632,
+    "working_digits": 107800
    },
    {
     "depth": 2540,
-    "delta": 0.27429963695013243,
-    "correct_digits": 277822.43704822403,
-    "log10_q": 218019.70980165643,
-    "working_digits": 436200
+    "delta": 0.27930630108278626,
+    "correct_digits": 69094.19057305607,
+    "log10_q": 54009.10674369051,
+    "working_digits": 108180
    },
    {
     "depth": 2550,
-    "delta": 0.2740260559001104,
-    "correct_digits": 278916.1722512126,
-    "log10_q": 218925.01409961816,
-    "working_digits": 438012
+    "delta": 0.27923303588765175,
+    "correct_digits": 69367.07413205397,
+    "log10_q": 54225.518092503444,
+    "working_digits": 108612
    },
    {
     "depth": 2560,
-    "delta": 0.2742144539379915,
-    "correct_digits": 280009.99975918996,
-    "log10_q": 219751.0779239806,
-    "working_digits": 439664
+    "delta": 0.2794973040917577,
+    "correct_digits": 69638.31522980591,
+    "log10_q": 54426.308681625706,
+    "working_digits": 109014
    },
    {
     "depth": 2570,
-    "delta": 0.27411197260221976,
-    "correct_digits": 281103.77174820687,
-    "log10_q": 220627.21157394542,
-    "working_digits": 441416
+    "delta": 0.27987161427788526,
+    "correct_digits": 69910.25004791004,
+    "log10_q": 54622.86159643756,
+    "working_digits": 109406
    },
    {
     "depth": 2580,
-    "delta": 0.2743214487849984,
-    "correct_digits": 282197.56405695935,
-    "log10_q": 221449.27743782432,
-    "working_digits": 443060
+    "delta": 0.27919442064476946,
+    "correct_digits": 70182.85407132108,
+    "log10_q": 54864.88444496645,
+    "working_digits": 109890
    },
    {
     "depth": 2590,
-    "delta": 0.2745678119391358,
-    "correct_digits": 283291.3726965385,
-    "log10_q": 222264.6531968646,
-    "working_digits": 444690
+    "delta": 0.2796147890356367,
+    "correct_digits": 70454.44974762347,
+    "log10_q": 55059.10868748279,
+    "working_digits": 110280
    },
    {
     "depth": 2600,
-    "delta": 0.27429821380934627,
-    "correct_digits": 284385.12981261616,
-    "log10_q": 223169.99798852764,
-    "working_digits": 446502
+    "delta": 0.2792138517543614,
+    "correct_digits": 70726.31748990018,
+    "log10_q": 55288.892778094516,
+    "working_digits": 110738
    },
    {
     "depth": 2610,
-    "delta": 0.2743842376107221,
-    "correct_digits": 285478.9752239301,
-    "log10_q": 224013.26601399278,
-    "working_digits": 448188
+    "delta": 0.27897520044166557,
+    "correct_digits": 70998.76416069307,
+    "log10_q": 55512.228959697764,
+    "working_digits": 111186
    },
    {
     "depth": 2620,
-    "delta": 0.27422288274781276,
-    "correct_digits": 286572.69691677135,
-    "log10_q": 224899.97691674498,
-    "working_digits": 449962
+    "delta": 0.2786761741034024,
+    "correct_digits": 71270.59996156704,
+    "log10_q": 55737.80242800053,
+    "working_digits": 111636
    },
    {
     "depth": 2630,
-    "delta": 0.27412641275854716,
-    "correct_digits": 287666.57948193024,
-    "log10_q": 225775.54048119741,
-    "working_digits": 451712
+    "delta": 0.27924943126181223,
+    "correct_digits": 71542.39239293805,
+    "log10_q": 55925.28762930216,
+    "working_digits": 112012
    },
    {
     "depth": 2640,
-    "delta": 0.27413780349889816,
-    "correct_digits": 288760.2652760366,
-    "log10_q": 226631.895296627,
-    "working_digits": 453424
+    "delta": 0.2784058646585602,
+    "correct_digits": 71814.72856410066,
+    "log10_q": 56175.2183319975,
+    "working_digits": 112512
    },
    {
     "depth": 2650,
-    "delta": 0.2744932724180616,
-    "correct_digits": 289854.1856518746,
-    "log10_q": 227427.0032841696,
-    "working_digits": 455016
+    "delta": 0.2794200811041274,
+    "correct_digits": 72086.77185537889,
+    "log10_q": 56343.317507701366,
+    "working_digits": 112848
    },
    {
     "depth": 2660,
-    "delta": 0.27475046014980814,
-    "correct_digits": 290947.8348102807,
-    "log10_q": 228239.05062649568,
-    "working_digits": 456640
+    "delta": 0.2794454153627558,
+    "correct_digits": 72358.47452964117,
+    "log10_q": 56554.56157863967,
+    "working_digits": 113270
    },
    {
     "depth": 2670,
-    "delta": 0.27503890722793384,
-    "correct_digits": 292041.79395287216,
-    "log10_q": 229045.39798538474,
-    "working_digits": 458252
+    "delta": 0.2796147692130016,
+    "correct_digits": 72630.72380199943,
+    "log10_q": 56759.835498514396,
+    "working_digits": 113680
    },
    {
     "depth": 2680,
-    "delta": 0.27506212226995563,
-    "correct_digits": 293135.4054504705,
-    "log10_q": 229898.92047660405,
-    "working_digits": 459960
+    "delta": 0.2792906835047917,
+    "correct_digits": 72902.97705035923,
+    "log10_q": 56987.03038361193,
+    "working_digits": 114136
    },
    {
     "depth": 2690,
-    "delta": 0.27476128301555863,
-    "correct_digits": 294229.40465270175,
-    "log10_q": 230811.37509658007,
-    "working_digits": 461784
+    "delta": 0.28007125550367795,
+    "correct_digits": 73174.56391916997,
+    "log10_q": 57164.44581077442,
+    "working_digits": 114490
    },
    {
     "depth": 2700,
-    "delta": 0.2748659129052325,
-    "correct_digits": 295322.97713695525,
-    "log10_q": 231650.2262296413,
-    "working_digits": 463462
+    "delta": 0.27985576135901036,
+    "correct_digits": 73446.73951614427,
+    "log10_q": 57386.73195341568,
+    "working_digits": 114934
    },
    {
     "depth": 2710,
-    "delta": 0.2745564081117759,
-    "correct_digits": 296417.0180829854,
-    "log10_q": 232564.8485986744,
-    "working_digits": 465290
+    "delta": 0.2795394049613986,
+    "correct_digits": 73719.24294218479,
+    "log10_q": 57613.89032361123,
+    "working_digits": 115388
    },
    {
     "depth": 2720,
-    "delta": 0.2741926409153544,
-    "correct_digits": 297510.54981809173,
-    "log10_q": 233489.45855186085,
-    "working_digits": 467140
+    "delta": 0.27943705965472626,
+    "correct_digits": 73990.66082987831,
+    "log10_q": 57830.63752260366,
+    "working_digits": 115822
    },
    {
     "depth": 2730,
-    "delta": 0.2742783652148024,
-    "correct_digits": 298604.6346608254,
-    "log10_q": 234332.3427691486,
-    "working_digits": 468826
+    "delta": 0.2805926673187139,
+    "correct_digits": 74262.77025609804,
+    "log10_q": 57990.93822049468,
+    "working_digits": 116142
    },
    {
     "depth": 2740,
-    "delta": 0.27396225319628886,
-    "correct_digits": 299698.1234491344,
-    "log10_q": 235248.82522791487,
-    "working_digits": 470658
+    "delta": 0.2800557428555038,
+    "correct_digits": 74535.66673359826,
+    "log10_q": 58228.45383852324,
+    "working_digits": 116618
    },
    {
     "depth": 2750,
-    "delta": 0.27380652149703116,
-    "correct_digits": 300792.2549205123,
-    "log10_q": 236136.53238877168,
-    "working_digits": 472434
+    "delta": 0.2794338062050617,
+    "correct_digits": 74806.76581759083,
+    "log10_q": 58468.648752900895,
+    "working_digits": 117098
    },
    {
     "depth": 2760,
-    "delta": 0.27411686867176277,
-    "correct_digits": 301885.69799133396,
-    "log10_q": 236937.21150246033,
-    "working_digits": 474036
+    "delta": 0.2786119946280677,
+    "correct_digits": 75078.81284288732,
+    "log10_q": 58718.99619143399,
+    "working_digits": 117598
    },
    {
     "depth": 2770,
-    "delta": 0.27383915763138034,
-    "correct_digits": 302979.87956150976,
-    "log10_q": 237847.8301176428,
-    "working_digits": 475858
+    "delta": 0.27878656665368534,
+    "correct_digits": 75352.41478557541,
+    "log10_q": 58924.93458291229,
+    "working_digits": 118010
    },
    {
     "depth": 2780,
-    "delta": 0.27393322063470527,
-    "correct_digits": 304073.2734112021,
-    "log10_q": 238688.55014213794,
-    "working_digits": 477538
+    "delta": 0.27863222072724625,
+    "correct_digits": 75622.87981177714,
+    "log10_q": 59143.5743491316,
+    "working_digits": 118448
    },
    {
     "depth": 2790,
-    "delta": 0.2738868327518977,
-    "correct_digits": 305167.5095238954,
-    "log10_q": 239556.21620223613,
-    "working_digits": 479274
+    "delta": 0.2789758989317101,
+    "correct_digits": 75894.86530750351,
+    "log10_q": 59340.340479360246,
+    "working_digits": 118842
    },
    {
     "depth": 2800,
-    "delta": 0.27373979035895074,
-    "correct_digits": 306260.84967991005,
-    "log10_q": 240442.24102758314,
-    "working_digits": 481046
+    "delta": 0.2788502636518582,
+    "correct_digits": 76167.6752907795,
+    "log10_q": 59559.49453634757,
+    "working_digits": 119280
    },
    {
     "depth": 2810,
-    "delta": 0.2737819368669034,
-    "correct_digits": 307355.14611257066,
-    "log10_q": 241293.37778848247,
-    "working_digits": 482748
+    "delta": 0.278363404060436,
+    "correct_digits": 76439.0042806336,
+    "log10_q": 59794.42468224776,
+    "working_digits": 119750
    },
    {
     "depth": 2820,
-    "delta": 0.27416751969171493,
-    "correct_digits": 308448.426772795,
-    "log10_q": 242078.39393632018,
-    "working_digits": 484318
+    "delta": 0.2777052571013069,
+    "correct_digits": 76710.92639858846,
+    "log10_q": 60038.04552907634,
+    "working_digits": 120238
    },
    {
     "depth": 2830,
-    "delta": 0.2743579470509812,
-    "correct_digits": 309542.79121376073,
-    "log10_q": 242900.97764923918,
-    "working_digits": 485964
+    "delta": 0.27751028563292596,
+    "correct_digits": 76983.49381971241,
+    "log10_q": 60260.566733184416,
+    "working_digits": 120682
    },
    {
     "depth": 2840,
-    "delta": 0.2743027826852877,
-    "correct_digits": 310636.0046689573,
-    "log10_q": 243769.38423878068,
-    "working_digits": 487700
+    "delta": 0.2774913030423142,
+    "correct_digits": 77255.14154624222,
+    "log10_q": 60474.10370799471,
+    "working_digits": 121110
    },
    {
     "depth": 2850,
-    "delta": 0.2742653548540624,
-    "correct_digits": 311730.44770068745,
-    "log10_q": 244635.42582650608,
-    "working_digits": 489432
+    "delta": 0.27762238234006587,
+    "correct_digits": 77526.99533282596,
+    "log10_q": 60680.68030463678,
+    "working_digits": 121522
    },
    {
     "depth": 2860,
-    "delta": 0.2740518374285113,
-    "correct_digits": 312823.5833509322,
-    "log10_q": 245534.42345196975,
-    "working_digits": 491230
+    "delta": 0.2781293922186938,
+    "correct_digits": 77799.4177028309,
+    "log10_q": 60869.75088475164,
+    "working_digits": 121900
    },
    {
     "depth": 2870,
-    "delta": 0.2741554155845361,
-    "correct_digits": 313918.12026963034,
-    "log10_q": 246373.49292716867,
-    "working_digits": 492908
+    "delta": 0.2782027894659857,
+    "correct_digits": 78071.29542274906,
+    "log10_q": 61078.958727172,
+    "working_digits": 122318
    },
    {
     "depth": 2880,
-    "delta": 0.27415905955901076,
-    "correct_digits": 315011.16280442406,
-    "log10_q": 247230.64239204963,
-    "working_digits": 494622
+    "delta": 0.27848699604187327,
+    "correct_digits": 78343.07166315214,
+    "log10_q": 61277.957386894086,
+    "working_digits": 122716
    },
    {
     "depth": 2890,
-    "delta": 0.2743726800946583,
-    "correct_digits": 316105.8174058878,
-    "log10_q": 248048.1748733094,
-    "working_digits": 496258
+    "delta": 0.2781989474694804,
+    "correct_digits": 78615.38937711754,
+    "log10_q": 61504.8146712659,
+    "working_digits": 123170
    },
    {
     "depth": 2900,
-    "delta": 0.2748092565958645,
-    "correct_digits": 317198.7430180961,
-    "log10_q": 248820.5520762494,
-    "working_digits": 497802
+    "delta": 0.2780092631547213,
+    "correct_digits": 78887.47265305587,
+    "log10_q": 61726.83948966449,
+    "working_digits": 123614
    },
    {
     "depth": 2910,
-    "delta": 0.2740079288273418,
-    "correct_digits": 318293.55701768247,
-    "log10_q": 249836.40196859307,
-    "working_digits": 499834
+    "delta": 0.2771034346202289,
+    "correct_digits": 79159.15521186267,
+    "log10_q": 61983.35472756924,
+    "working_digits": 124128
    },
    {
     "depth": 2920,
-    "delta": 0.27382770897889164,
-    "correct_digits": 319386.32398340723,
-    "log10_q": 250729.6094535652,
-    "working_digits": 501620
+    "delta": 0.2781542689646002,
+    "correct_digits": 79431.38922861683,
+    "log10_q": 62145.38507387073,
+    "working_digits": 124452
    },
    {
     "depth": 2930,
-    "delta": 0.2735853697692419,
-    "correct_digits": 320481.38919007854,
-    "log10_q": 251637.14722017094,
-    "working_digits": 503436
+    "delta": 0.27825657319632313,
+    "correct_digits": 79703.68672598283,
+    "log10_q": 62353.43388587559,
+    "working_digits": 124868
    },
    {
     "depth": 2940,
-    "delta": 0.2742677769185289,
-    "correct_digits": 321573.90569449164,
-    "log10_q": 252359.7563395434,
-    "working_digits": 504880
+    "delta": 0.2780777366093877,
+    "correct_digits": 79975.24604569023,
+    "log10_q": 62574.63357264681,
+    "working_digits": 125310
    },
    {
     "depth": 2950,
-    "delta": 0.2744066421110525,
-    "correct_digits": 322669.625443822,
-    "log10_q": 253192.0462289182,
-    "working_digits": 506546
+    "delta": 0.2788030102554863,
+    "correct_digits": 80247.40822225025,
+    "log10_q": 62751.97006786681,
+    "working_digits": 125664
    },
    {
     "depth": 2960,
-    "delta": 0.2744764517136538,
-    "correct_digits": 323761.4881480771,
-    "log10_q": 254034.8922985193,
-    "working_digits": 508232
+    "delta": 0.27891737599154853,
+    "correct_digits": 80519.97123817263,
+    "log10_q": 62959.47865728641,
+    "working_digits": 126080
    },
    {
     "depth": 2970,
-    "delta": 0.274458504717383,
-    "correct_digits": 324856.809196192,
-    "log10_q": 254897.9099701881,
-    "working_digits": 509958
+    "delta": 0.2789680014737774,
+    "correct_digits": 80791.34448505276,
+    "log10_q": 63169.167947873175,
+    "working_digits": 126500
    },
    {
     "depth": 2980,
-    "delta": 0.2744434124512021,
-    "correct_digits": 325949.07134344,
-    "log10_q": 255757.97886272997,
-    "working_digits": 511678
+    "delta": 0.28002395182717166,
+    "correct_digits": 81063.44148585177,
+    "log10_q": 63329.62861369717,
+    "working_digits": 126820
    },
    {
     "depth": 2990,
-    "delta": 0.27458183210616854,
-    "correct_digits": 327044.01212119416,
-    "log10_q": 256589.26236283622,
-    "working_digits": 513340
+    "delta": 0.278759947578027,
+    "correct_digits": 81336.4642149018,
+    "log10_q": 63605.733327004156,
+    "working_digits": 127372
    },
    {
     "depth": 3000,
-    "delta": 0.2745782653754989,
-    "correct_digits": 328136.6552823954,
-    "log10_q": 257447.23897808214,
-    "working_digits": 515056
+    "delta": 0.2786733376290649,
+    "correct_digits": 81607.4511503177,
+    "log10_q": 63821.96980945536,
+    "working_digits": 127804
    }
   ]
  }
