@@ -36,6 +36,24 @@ from ramanujantools.cmf.meijer_g import MeijerG
 t = sp.Symbol("t")
 
 
+def gauss_arctan_pi_seeds(taylor_terms=0):
+    """Rows P,Q for pi from the Gauss CF of the Gregory-series tail.
+
+    pFq(2,1,-1), start (m+1/2,1;m+3/2), direction (1,1;2).
+    A walk of k steps reads the source convergent M=2k as (P W)e0/(Q W)e0.
+    Source: Borwein--Choi--Pigulla (2005), equations (8), (10), (12).
+    """
+    m = sp.sympify(taylor_terms)
+    if m.is_Integer is not True or m < 0:
+        raise ValueError("taylor_terms must be a nonnegative integer")
+    partial = sum((-1)**j * sp.Rational(1, 2*j+1) for j in range(int(m)))
+    a = m + sp.Rational(1, 2)
+    A = (2*m+1)*(-1)**m / 4
+    B = -(2*m+1)*(-1)**m * partial
+    # F=A*pi+B and theta F=a/2-a*F at z=-1.
+    return Matrix([[-B, a*B-a/2]]), Matrix([[A, -a*A]])
+
+
 def integral_cmf(weight):
     """The CMF of the moments S_j = int t^j w(t) dt; see `integral_matrices`."""
     return CMF(integral_matrices(weight))
@@ -300,6 +318,106 @@ def hata_pi_sqrt3_start():
                      sp.Rational(17086, 405)]]),
             Matrix([[-sp.Rational(68, 9), sp.Rational(376, 27),
                      -sp.Rational(628, 27)]]))
+
+
+class RhinLog3CMF:
+    """Full rank-8, seven-axis moment field, evaluated at integer points.
+
+    Rhin (1987), as explicitly reconstructed in Zudilin (2004), Section 3.4.
+    The walk follows floor(N*trajectory[axis]) from start, raising polynomial
+    axes before the pole order. It uses the same exact integration-by-parts
+    matrices as integral_cmf, without expanding large symbolic entries.
+    """
+    def __init__(self):
+        self.axes = sp.symbols('e1:7 b')
+        self.factors = (t-1, t-sp.Rational(2,3), t-sp.Rational(4,3), 5*t-4,
+                        17*t**2-34*t+16, 19*t**2-36*t+16)
+        self.step = integral_steps({**dict(zip(self.factors,self.axes[:-1])),
+                                    t:-self.axes[-1]})
+
+    def walk(self, trajectory, depths, start):
+        point = dict(start)
+        W = fmpq_mat([[int(i==j) for j in range(8)] for i in range(8)])
+        walks = []
+        for N in depths:
+            target = {a:start[a]+int(sp.floor(N*trajectory[a])) for a in self.axes}
+            for a in self.axes:
+                if target[a] < point[a]:
+                    raise ValueError('walk requires nondecreasing depths and coordinates')
+                while point[a] < target[a]:
+                    W = W*self.step(a,point)
+                    point[a] += 1
+            walks.append(Matrix([[sp.Rational(str(W[i,j])) for j in range(8)] for i in range(8)]))
+        return walks
+
+
+def rhin_log3_seeds():
+    """Rows for log 3 = log(4/3)-2 log(2/3), at all e_i=0,b=1."""
+    a,b = sp.Rational(2,3),sp.Rational(4,3)
+    P = Matrix([[0]+[-((b**j-1)-2*(a**j-1))/j for j in range(1,8)]])
+    Q = Matrix([[1]+[0]*7])
+    return P,Q
+
+
+def salikhov_log3():
+    """Salikhov (2007): y=(x-35)^2 moment field, rank 3, four axes.
+
+    Weight y^u(y-25)^v(y-49)^w/(1225-y)^m, start (-1/2,0,0,1),
+    direction (1,1,1,2). Source integrals are one half of these y moments.
+    """
+    u, v, w, m = sp.symbols("u v w m")
+    return integral_cmf({t:u, t-25:v, t-49:w, 1225-t:-m})
+
+
+def salikhov_log3_seeds():
+    """Rows P,Q for log 3 = 2 log(3/2)+log(4/3), from source index 0.
+
+    For endpoints h=5,7 the source moments are C_h+B log((35+h)/(35-h)).
+    Seeds use the original dx moments; the common y-substitution factor cancels.
+    """
+    def C(h):
+        return Matrix([[0, -h, -sp.Rational(h**3,3)-1225*h]])
+    B = Matrix([[sp.Rational(1225**j,70) for j in range(3)]])
+    return -(2*C(7)+C(5)), B
+
+
+def huttner_logs():
+    """Huttner (2003), Corollary 3.1(4), after z=1-t; rank 3, four axes.
+
+    Weight (z-1)^u (z-2/3)^v (z-1/2)^w / z^m.
+    Source n=1 starts at (2,2,2,3), direction (2,2,2,3).
+    The common source sign (-1)^(n+1) cancels from rational readouts.
+    """
+    u, v, w, m = sp.symbols("u v w m")
+    return integral_cmf({t-1: u, t-sp.Rational(2,3): v,
+                         t-sp.Rational(1,2): w, t: -m})
+
+
+def huttner_logs_seeds(ratio):
+    """P,Q with log(ratio) approximated by (P W)e0/(Q W)e0.
+
+    At source n=1 the moments on the oriented interval are C-B*log(ratio).
+    Here the residue row returned as Q is B, since log(end/start)=-log(ratio).
+    """
+    ratio = sp.Rational(ratio)
+    if ratio in (2, 3):
+        P32, Q = huttner_logs_seeds(sp.Rational(3,2))
+        P43, _ = huttner_logs_seeds(sp.Rational(4,3))
+        # log 2 = log(3/2)+log(4/3); log 3 = 2 log(3/2)+log(4/3).
+        return (ratio-1)*P32 + P43, Q
+    if ratio == sp.Rational(3,2):
+        left, right = sp.S.One, sp.Rational(2,3)
+    elif ratio == sp.Rational(4,3):
+        left, right = sp.Rational(2,3), sp.Rational(1,2)
+    else:
+        raise ValueError("ratio must be 3/2, 4/3, 2, or 3")
+    polynomial = sp.Poly(((t-1)*(t-sp.Rational(2,3))*(t-sp.Rational(1,2)))**2,t)
+    C, B = [], []
+    for j in range(3):
+        C.append(sum(polynomial.nth(k)*(right**(k+j-2)-left**(k+j-2))/(k+j-2)
+                     for k in range(7) if k+j != 2))
+        B.append(polynomial.nth(2-j))
+    return Matrix([C]), Matrix([B])
 
 
 def hata_pi():
