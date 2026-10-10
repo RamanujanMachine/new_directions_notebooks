@@ -1,4 +1,4 @@
-"""The CMFs of the history notebooks that ramanujantools does not provide.
+"""Custom CMFs and independent moment references for the history notebooks.
 
 ramanujantools supplies the pFq and Meijer G CMFs. The others are:
 
@@ -11,7 +11,17 @@ ramanujantools supplies the pFq and Meijer G CMFs. The others are:
   Mahler's, the same field with eleven a-axes;
 * Eskandari's Catalan CMF, built from a recurrence;
 * the Dvornicich--Viola zeta(2) and zeta(3) CMFs, built by `functional_cmf`
-  from the recurrence of Beukers' integrals.
+  from the recurrence of Beukers' integrals, and walked at integer points with
+  `axis_steps`.
+* independent reference implementations (the notebooks now use pFq directly):
+  the Alladi--Robinson logarithmic and quadratic moment fields, the
+  Heimonen--Matala-aho--Vaananen Jacobi-Pade moment field, and Hata's
+  pi/sqrt(3) integral in rational rank-3 coordinates; Hata's (1992)
+  rank-2 hypergeometric remainders for algebraic logarithms and pi combinations.
+  `local_checks/verify_hypergeometric_replacements.py` compares all sampled fractions with
+  these references; the quadratic and Hata (1993) replacements use even indices.
+* Zudilin's (2002) zeta(5) coefficient seeds and determinant readout for the
+  full 15-axis pFq(8, 7, 1) field, plus its rank-3 recurrence for cross-checks.
 
 ramanujantools walks only rational matrices, so CMFs over Q(i) are realified:
 a row S = Re S + i Im S becomes (Re S, Im S). ramanujantools checks
@@ -123,6 +133,40 @@ def integral_steps(weight):
     return M
 
 
+def axis_steps(cmf):
+    """The axis matrices of `cmf` at integer points, as exact python-flint fmpq_mat.
+
+    Returns M(x, point), like `integral_steps`. Each entry p/q of each symbolic
+    axis matrix is compiled once into integer polynomials, so a step costs integer
+    evaluations instead of a sympy substitution. This is for walks of tens of
+    thousands of axis steps, such as the Dvornicich--Viola staircases.
+    """
+    axes = list(cmf.matrices)
+    compiled = {}
+    for x, matrix in cmf.matrices.items():
+        rows = []
+        for row in matrix.tolist():
+            entries = []
+            for entry in row:
+                p, q = sp.fraction(sp.cancel(sp.together(entry)))
+                cp, p = sp.Poly(p, *axes).clear_denoms()  # p = cp * numerator, integral
+                cq, q = sp.Poly(q, *axes).clear_denoms()
+                scale = sp.Rational(cq) / sp.Rational(cp)
+                entries.append((
+                    sp.lambdify(axes, p.as_expr(), modules=[{}]),
+                    sp.lambdify(axes, q.as_expr(), modules=[{}]),
+                    fmpq(int(scale.p), int(scale.q)),
+                ))
+            rows.append(entries)
+        compiled[x] = rows
+
+    def M(x, point):
+        values = [int(point[y]) for y in axes]
+        return fmpq_mat([[c * fmpq(int(p(*values)), int(q(*values))) for p, q, c in row] for row in compiled[x]])
+
+    return M
+
+
 def realify(matrices):
     """Axis matrices over Q(i) as real matrices of twice the size, acting on rows (Re S, Im S)."""
     def real(M):
@@ -144,6 +188,77 @@ def rhin_log2():
     return integral_cmf({t * (1 - t): e1, 6 * t**2 - 5 * t + 1: e2, 1 + t: -b})
 
 
+def alladi_log(a):
+    """Rank-2 CMF for E_n = int_0^1 t^n(1-t)^n/(a+t)^(n+1) dt.
+
+    The start is (u,v,w)=(1,1,2), the direction is (1,1,1), and the
+    moment state is (E(u,v,w), E(u+1,v,w)).
+    """
+    u, v, w = sp.symbols("u v w")
+    return integral_cmf({t: u, 1 - t: v, a + t: -w})
+
+
+def alladi_log_start(a):
+    """Rows C,B at (1,1,2), for moments C+B*log((a+1)/a)."""
+    return (Matrix([[-2, 3*a + sp.Rational(1, 2)]]),
+            Matrix([[2*a + 1, -a*(3*a + 2)]]))
+
+
+def alladi_quadratic(a):
+    """Rank-3 CMF for E_n = int_0^1 t^n(1-t)^n/(t^2+a)^(n+1) dt."""
+    u, v, w = sp.symbols("u v w")
+    return integral_cmf({t: u, 1 - t: v, t**2 + a: -w})
+
+
+def alladi_quadratic_start(a):
+    """Rows C,B,H at (1,1,2), for moments C+B*c+H*log((a+1)/a).
+
+    Here c=atan(1/sqrt(a))/sqrt(a). Along the diagonal, H vanishes in
+    the first component. Rational multiples of c include pi/sqrt(3).
+    """
+    return (Matrix([[sp.Rational(1, 2*a), 0, -sp.Rational(3, 2)]]),
+            Matrix([[-sp.Rational(1, 2), sp.Rational(1, 2),
+                     sp.Rational(3*a, 2)]]),
+            Matrix([[0, -sp.Rational(1, 2), sp.Rational(1, 2)]]))
+
+
+def jacobi_pade(a):
+    """Rank-2 CMF for Jacobi-Pade remainders of 2F1(1,1/2;3/2;-1/a).
+
+    J_j(U,V,W) = int_0^1 t^(U+j)(1-t)^V(1+t/a)^(-W) dt.
+    At (U,V,W)=(n-1/2,m,n+1), J_0 is proportional to the Pade remainder
+    with l=n and m=floor(beta*n). The regular start (n,m)=(1,1) is
+    (U,V,W)=(1/2,1,2).
+    """
+    U, V, W = sp.symbols("U V W")
+    return integral_cmf({t: U,
+                         1 - t: V, 1 + t/sp.Integer(a): -W})
+
+
+def hata_hypergeometric(s):
+    """Hata (1992), Eq. (3.10), after n integrations by parts.
+
+    Moments J_j = int_0^1 t^(U+j)(1-t)^V/(1-t/s)^W dt, j=0,1.
+    For source index n and m=floor(n/lambda), use
+    (U,V,W)=(n-delta,n+m,n+1). Common scalar factors from integration
+    by parts and denominator clearing cancel in the rational readout.
+    """
+    U, V, W = sp.symbols("U V W")
+    return integral_cmf({t: U, 1-t: V, 1-t/sp.Integer(s): -W})
+
+
+def hata_hypergeometric_start(s, delta):
+    """Rows C,B at source n=m=0, J=C+B*2F1(1,1-delta;2-delta;1/s)."""
+    b = 1-sp.Rational(delta)
+    return Matrix([[0, -s/b]]), Matrix([[1/b, s/b]])
+
+
+def jacobi_pade_start(a):
+    """Rows C,B at n=m=1, for moments C+B*F(-1/a), F=2F1(1,1/2;3/2;z)."""
+    return (Matrix([[-3*a**2, 5*a**3 + sp.Rational(4*a**2, 3)]]),
+            Matrix([[a*(3*a + 1), -a**2*(5*a + 3)]]))
+
+
 def rhin_log2_full():
     """Rhin's (1987) full log 2 field: axes (e1, ..., e6, b), rank 14, at integer points.
 
@@ -157,6 +272,34 @@ def rhin_log2_full():
     p = (t * (1 - t), t**2 + 2 * t - 1, 6 * t**2 - 5 * t + 1, 7 * t**2 - 6 * t + 1,
          13 * t**2 - 11 * t + 2, 2 * t**4 + 3 * t**3 + 3 * t**2 - 5 * t + 1)
     return integral_steps({**dict(zip(p, (e1, e2, e3, e4, e5, e6))), 1 + t: -b})
+
+
+def hata_pi_sqrt3():
+    """Hata (1993), Theorem 1.2: rank-3 rational moment CMF.
+
+    Put lambda=exp(pi*i/3), h=(1+lambda)/2 and z=h*(1+t).
+    Hata's integral of F(z)^n dz/z is h^(3*n) times J_0, where
+    J_j = int_{-i/sqrt(3)}^{i/sqrt(3)}
+          t^(v+j)*(t^2+1/3)^u/(1+t)^w dt.
+    The source index n is (u,v,w)=(2*n,2*n,3*n+1).
+    The state is (J_0,J_1,J_2); the contour avoids t=-1.
+    """
+    u, v, w = sp.symbols("u v w")
+    return integral_cmf({t**2 + sp.Rational(1, 3): u, t: v, 1 + t: -w})
+
+
+def hata_pi_sqrt3_start():
+    """Rows C,B at (2,2,4), with J/(i*sqrt(3))=C+B*pi/sqrt(3).
+
+    Integrate the rational partial fractions of
+    t^(2+j)*(t^2+1/3)^2/(1+t)^4 for j=0,1,2. The logarithm's
+    endpoint difference is i*pi/3; its residue therefore contributes B=R/3.
+    The rational approximant at index n is -(C*walk)[0]/(B*walk)[0].
+    """
+    return (Matrix([[sp.Rational(370, 27), -sp.Rational(682, 27),
+                     sp.Rational(17086, 405)]]),
+            Matrix([[-sp.Rational(68, 9), sp.Rational(376, 27),
+                     -sp.Rational(628, 27)]]))
 
 
 def hata_pi():
@@ -260,6 +403,164 @@ def eskandari_catalan():
 
     M_k = Matrix(8, 8, lambda i, j: (1 if i == j + 1 else 0) if j < 7 else -c[i] / c[8])
     return CMF({k: M_k, m: Matrix.eye(8) - 16 * M_k})
+
+
+def zudilin_catalan_seeds(variant="original"):
+    """Numerator/denominator rows for two Zudilin (2002) 3F2(1) recoveries.
+
+    Both start at source index 1 and have direction (1,1,1;2,2).
+    Original: start (2,2,3/2;7/2,7/2), source math/0201024, Theorem 3.
+    Modified: start (1,1,1/2;5/2,5/2), source math/0210423, Theorem 2.
+    Multiplication by the source's beta prefactor gives its exact p_N,q_N.
+    """
+    if variant == "original":
+        return (Matrix([[-sp.Rational(2925,32), sp.Rational(13275,64)]]),
+                Matrix([[-sp.Rational(1575,16), sp.Rational(7425,32)]]))
+    if variant == "modified":
+        return (Matrix([[sp.Rational(45,4), -sp.Rational(117,8)]]),
+                Matrix([[sp.Rational(27,2), -sp.Rational(63,4)]]))
+    raise ValueError("variant must be original or modified")
+
+
+def zudilin_zeta5():
+    """Rank-3 one-axis recurrence CMF, Zudilin (2002), math/0206178, (1).
+
+    A row (u_k,u_(k+1),u_(k+2)) advances by right multiplication.
+    Start k=0, direction +1; the first column at depth N reads u_N.
+    This is a one-dimensional encoding, not a multiaxis extension.
+    """
+    k = sp.Symbol("k")
+    n = k + 2
+    def a0(n):
+        return 41218*n**3 - 48459*n**2 + 20010*n - 2871
+    a1 = 2*(48802112*n**9 + 89030880*n**8 + 36002654*n**7
+            - 24317344*n**6 - 19538418*n**5 + 1311365*n**4
+            + 3790503*n**3 + 460056*n**2 - 271701*n - 60291)
+    a2 = (3874492*n**8 - 2617900*n**7 - 3144314*n**6 + 2947148*n**5
+          + 647130*n**4 - 1182926*n**3 + 115771*n**2 + 170716*n - 44541)
+    d = (n + 1)**6 * a0(n)
+    return CMF({k: Matrix([
+        [0, 0, 4*(n-1)**4*(2*n-1)*(2*n-3)*a0(n+1)/d],
+        [1, 0, 4*(2*n-1)*a2/d],
+        [0, 1, -a1/d],
+    ])})
+
+
+def apery_seeds(zeta_index):
+    """Source-index-2 numerator/denominator rows for the full pFq CMFs.
+
+    zeta(2): 3F2(-N,-N,N+1;1,1;1), rank 2.
+    zeta(3): 4F3(-N,-N,N+1,N+1;1,1,1;1), rank 3.
+    The first-column trajectories satisfy Apery's second-order recurrence
+    identically; these rows match b_2,b_3 and a_2,a_3 respectively.
+    """
+    if zeta_index == 2:
+        return Matrix([[sp.Rational(125, 4), sp.Rational(79, 2)]]), Matrix([[19, 24]])
+    if zeta_index == 3:
+        return Matrix([[sp.Rational(351, 4), sp.Rational(2683, 24), 0]]), Matrix([[73, 93, 0]])
+    raise ValueError("zeta_index must be 2 or 3")
+
+
+def zudilin_zeta23_seeds():
+    """Coefficient rows (1,zeta(1),zeta(2),zeta(3)) of F_2,theta F_2,theta^2 F_2.
+
+    F_N=4F3(N+1,N+1,N+1,N+1;2N+2,2N+2,2N+2;1).
+    Source: Zudilin (2002), math/0206178, Section 3, Theorem 4.
+    """
+    m = sp.Symbol("m")
+    term = (sp.factorial(5)**3/sp.factorial(2)**4 * (m+1)*(m+2)
+            / sp.prod((m+i)**3 for i in range(3, 6)))
+    rows = [[sp.S(0)]*3 for _ in range(4)]
+    for j in range(3):
+        for term_j in sp.Add.make_args(sp.apart(m**j*term, m)):
+            numerator, denominator = term_j.as_numer_denom()
+            poly = sp.Poly(denominator, m)
+            power = poly.degree()
+            shift = poly.nth(power-1)/(power*poly.LC())
+            coefficient = numerator/poly.LC()
+            rows[0][j] -= coefficient*sp.harmonic(shift-1, power)
+            rows[power][j] += coefficient
+    assert rows[1] == [0]*3
+    return fmpq_mat([[fmpq(int(c.p), int(c.q)) for c in row] for row in rows])
+
+
+def zudilin_zeta23_forms(walk, index, seeds):
+    """Return (p2,p3,q)/C_N^2 from the full 7-axis walk of length index-2.
+
+    The paper's series are -C_N F_N and C_N(theta+N+1)F_N,
+    C_N=N!^6/(2N+1)!^3. Determinants eliminate the other zeta value.
+    """
+    state = seeds*fmpq_mat(walk.rows, walk.cols,
+                          [fmpq(int(c.p), int(c.q)) for c in walk])
+    a = [state[i, 0] for i in range(4)]
+    b = [(index+1)*state[i, 0]+state[i, 1] for i in range(4)]
+    assert a[1] == b[1] == 0
+    q = a[3]*b[2]-b[3]*a[2]
+    return b[3]*a[0]-a[3]*b[0], a[2]*b[0]-b[2]*a[0], q
+
+
+def zudilin_zeta23_readout(walk, index, seeds, zeta_index):
+    """Reduced rational approximation to either zeta(2) or zeta(3)."""
+    if zeta_index not in (2, 3):
+        raise ValueError("zeta_index must be 2 or 3")
+    p2, p3, q = zudilin_zeta23_forms(walk, index, seeds)
+    return (p2 if zeta_index == 2 else p3)/q
+
+
+def zudilin_zeta5_seeds():
+    """Numerator and denominator rows in the normalization of Theorem 1."""
+    return ([fmpq(0), fmpq(87, 2), fmpq(-1190161, 64)],
+            [fmpq(-1), fmpq(42), fmpq(-17934)])
+
+
+def zudilin_zeta5_hypergeometric_seeds():
+    """Coefficient rows of (F, theta F, ..., theta^6 F) at source n=2.
+
+    F = 8F7(8,3,3,3,3,3,3,3;6,6,6,6,6,6,6;1).
+    Rows are 1, zeta(1), ..., zeta(7); the zeta(1) row vanishes.
+    Each derivative is summed by rational partial fractions. All seven
+    derivatives converge at this anchor (parametric excess is 13).
+    """
+    m = sp.Symbol("m")
+    term = (sp.factorial(5)**7 / (sp.factorial(7)*sp.factorial(2)**7)
+            * sp.prod(m+i for i in range(1, 8))
+            / sp.prod((m+i)**7 for i in range(3, 6)))
+    rows = [[sp.S(0)]*7 for _ in range(8)]
+    for j in range(7):
+        for term_j in sp.Add.make_args(sp.apart(m**j*term, m)):
+            numerator, denominator = term_j.as_numer_denom()
+            poly = sp.Poly(denominator, m)
+            power = poly.degree()
+            shift = poly.nth(power-1) / (power*poly.LC())
+            coefficient = numerator/poly.LC()
+            rows[0][j] -= coefficient*sp.harmonic(shift-1, power)
+            rows[power][j] += coefficient
+    assert rows[1] == [0]*7
+    return fmpq_mat([[fmpq(int(c.p), int(c.q)) for c in row] for row in rows])
+
+
+def zudilin_zeta5_hypergeometric_forms(walk, index, seeds):
+    """Coefficient vectors of r_n/C_n and rtilde_n/C_n, source (7).
+
+    The walk starts at n=2, so its depth is index-2. For m=k-n-1,
+    r_n/C_n=(theta+3n/2+1)F_n and
+    rtilde_n/C_n=-(theta+n+1)(theta+2n+1)(theta+3n/2+1)F_n.
+    C_n=n!^11 (3n+1)!/(2n+1)!^7; it cancels from the final ratio.
+    """
+    state = seeds * fmpq_mat(walk.rows, walk.cols,
+                            [fmpq(int(c.p), int(c.q)) for c in walk])
+    a, b, c = fmpq(3*index+2, 2), index+1, 2*index+1
+    r = [a*state[i, 0]+state[i, 1] for i in range(8)]
+    rt = [-(a*b*c*state[i, 0]+(a*b+a*c+b*c)*state[i, 1]
+            +(a+b+c)*state[i, 2]+state[i, 3]) for i in range(8)]
+    return r, rt
+
+
+def zudilin_zeta5_hypergeometric_readout(walk, index, seeds):
+    """Source (15): cancel zeta(3) using the two coefficient determinants."""
+    r, rt = zudilin_zeta5_hypergeometric_forms(walk, index, seeds)
+    assert all(r[i] == rt[i] == 0 for i in (1, 2, 4, 6, 7))
+    return (r[3]*rt[0]-rt[3]*r[0]) / (r[5]*rt[3]-rt[5]*r[3])
 
 
 def functional_cmf(recurrence, axis, factors):
