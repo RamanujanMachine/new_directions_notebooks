@@ -18,6 +18,8 @@ ramanujantools supplies the pFq and Meijer G CMFs. The others are:
   Heimonen--Matala-aho--Vaananen Jacobi-Pade moment field, and Hata's
   pi/sqrt(3) integral in rational rank-3 coordinates; Hata's (1992)
   rank-2 hypergeometric remainders for algebraic logarithms and pi combinations.
+  The Stieltjes Euler--Gompertz recovery also now uses pFq(1, 1, -1);
+  its older auxiliary moment field is retained as an independent reference.
   `local_checks/verify_hypergeometric_replacements.py` compares all sampled fractions with
   these references; the quadratic and Hata (1993) replacements use even indices.
 * Zudilin's (2002) zeta(5) coefficient seeds and determinant readout for the
@@ -34,6 +36,30 @@ from ramanujantools.cmf import CMF
 from ramanujantools.cmf.meijer_g import MeijerG
 
 t = sp.Symbol("t")
+
+
+def hermite_exponential_seeds(z=1, family="A"):
+    """Readout rows for Hermite's three exponential Pade families.
+
+    Use pFq(1,1,z), direction (1,2), starts A=(1,2), B=(2,3),
+    C=(1,3). At source n, the types are (n,n), (n,n+1), (n+1,n).
+    Cohn (2006), Lemma 1: https://arxiv.org/abs/math/0601660.
+    Rows represent -constant and exp(z) coefficients of (F, theta F).
+    """
+    z = sp.sympify(z)
+    if z.is_Rational is not True or z == 0:
+        raise ValueError("z must be a nonzero rational")
+    if family not in ("A", "B", "C"):
+        raise ValueError("family must be A, B, or C")
+    # J_k = integral_0^1 t^k exp(z*t) dt = c_k + q_k exp(z).
+    moments = [(-1/z, 1/z)]
+    for k in (1, 2):
+        c, q = moments[-1]
+        moments.append((-k*c/z, (1-k*q)/z))
+    weights = {"A": (1, 0), "B": (0, 2), "C": (2, -2)}[family]
+    rows = [sum(weights[k]*moments[k+j][i] for k in (0, 1))*z**j
+            for i in (0, 1) for j in (0, 1)]
+    return Matrix([[-rows[0], -rows[1]]]), Matrix([[rows[2], rows[3]]])
 
 
 def gauss_arctan_pi_seeds(taylor_terms=0):
@@ -523,6 +549,61 @@ def eskandari_catalan():
     return CMF({k: M_k, m: Matrix.eye(8) - 16 * M_k})
 
 
+def catalan_catalogue_coordinates(a, b, n):
+    """Locate a catalogue recurrence in one of its two certified CMFs."""
+    offsets = sorted(-int(r) for r in sp.Poly(sp.cancel(-b/(2*n)), n).all_roots())
+    if len(offsets) != 3 or any(t < 0 for t in offsets):
+        raise ValueError("Expected three nonnegative catalogue offsets")
+    candidates = []
+    for i in sorted(set(offsets)):
+        for j in sorted(set(offsets)):
+            for k in sorted(set(offsets)):
+                if sorted((i, j, k)) != offsets:
+                    continue
+                even = 3*n**2+(2*i+2*j+3)*n+(i+1)*(j+1)
+                same = 3*n**2+(2*(i+j+k)+3)*n+(i+1)*(j+1)*(k+1)-i*j*k
+                if i % 2 == j % 2 == 0 and sp.expand(a-even) == 0:
+                    candidates.append(("even-pair", i, j, k))
+                if i % 2 == j % 2 == k % 2 and sp.expand(a-same) == 0:
+                    candidates.append(("same-parity", i, j, k))
+    if not candidates:
+        raise ValueError("Recurrence does not match a catalogue CMF")
+    return min(candidates, key=lambda item: (item[0] != "even-pair", item[1:]))
+
+
+def catalan_catalogue_cmf(family="same-parity", i=1, j=3, parity=1):
+    """The two catalogue CMFs certified in catalan_history.ipynb.
+
+    i,j are fixed parameters. For the same-parity field k=2*h+parity,
+    so an h-axis unit step is the certificate's k -> k+2 step. For the
+    even-pair field h=k. An n-axis walk starts at n=1; the source depth N
+    has continuant rows (1,a_0) W_N and (0,1) W_N, read in column 1.
+    """
+    # CMF reserves n for its own trajectory variable.
+    v, h = sp.symbols("v h")
+    i, j = sp.Integer(i), sp.Integer(j)
+    if parity not in (0, 1):
+        raise ValueError("parity must be 0 or 1")
+    k = 2*h+parity if family == "same-parity" else h
+    b = -2*v*(v+i)*(v+j)*(v+k)
+    if family == "same-parity":
+        a = 3*v**2+(2*(i+j+k)+3)*v+(i+1)*(j+1)*(k+1)-i*j*k
+        Y = Matrix([
+            [(k**2+k-v**2+v)/2, b/2],
+            [sp.Rational(1, 2), (k**2+2*k*v+(i+j+2)*k+2*v**2
+                                 +2*(i+j+1)*v+(i+1)*(j+1))/2],
+        ])
+    elif family == "even-pair":
+        a = 3*v**2+(2*i+2*j+3)*v+(i+1)*(j+1)
+        Y = Matrix([
+            [4*k**2+2*k*v+2*(1-i-j)*(k+v)-2*v**2, b],
+            [1, 4*k**2+2*k*v+(4-2*i-2*j)*k+v**2+v+(i-1)*(j-1)],
+        ])
+    else:
+        raise ValueError("Unknown catalogue family")
+    return CMF({v: Matrix([[0, b], [1, a]]), h: Y})
+
+
 def zudilin_catalan_seeds(variant="original"):
     """Numerator/denominator rows for two Zudilin (2002) 3F2(1) recoveries.
 
@@ -681,6 +762,33 @@ def zudilin_zeta5_hypergeometric_readout(walk, index, seeds):
     return (r[3]*rt[0]-rt[3]*r[0]) / (r[5]*rt[3]-rt[5]*r[3])
 
 
+def zudilin_zeta35_forms(walk, index, seeds):
+    """Return (p3,p5,q)/C_N^2 from Zudilin (2002), equations (7), (15).
+
+    Shared denominator permits exact rational linear combinations without
+    independently multiplying the component denominators.
+    """
+    r, rt = zudilin_zeta5_hypergeometric_forms(walk, index, seeds)
+    assert all(r[i] == rt[i] == 0 for i in (1, 2, 4, 6, 7))
+    q = r[5]*rt[3]-rt[5]*r[3]
+    return rt[5]*r[0]-r[5]*rt[0], r[3]*rt[0]-rt[3]*r[0], q
+
+
+def zudilin_zeta_sum_readout(walk, index, seeds, pair):
+    """Sum readout derived from published simultaneous approximants.
+
+    pair=(2,3): Theorem 4; pair=(3,5): Theorem 1 of math/0206178.
+    The paper supplies component asymptotics, not a delta for these sums.
+    """
+    if tuple(pair) == (2, 3):
+        a, b, q = zudilin_zeta23_forms(walk, index, seeds)
+    elif tuple(pair) == (3, 5):
+        a, b, q = zudilin_zeta35_forms(walk, index, seeds)
+    else:
+        raise ValueError('pair must be (2,3) or (3,5)')
+    return (a+b)/q
+
+
 def functional_cmf(recurrence, axis, factors):
     """The CMF of S(e_0, e_1, ...) = L(t^(e_0) prod_i f_i(t)^(e_i)) for a moment functional L.
 
@@ -718,6 +826,251 @@ def functional_cmf(recurrence, axis, factors):
     return CMF(matrices)
 
 
+def euler_gompertz():
+    """Rank-4 two-axis extension of the Stieltjes Euler--Gompertz recurrence.
+
+    J_(n+1)=2(n+1)J_n-n^2 J_(n-1).  The auxiliary v-axis is
+    S(u,v)=L(t^u(1-t)^v), not an extra parameter of the published CF.
+    Start (0,0), direction (1,0), readout (P W)[0]/(Q W)[0].
+    Source: https://arxiv.org/pdf/1010.1420, Theorem 2, Corollary 2.
+    """
+    l, u, v = sp.symbols("l u v")
+    return functional_cmf({1: sp.Integer(1), 0: -2*(l+1), -1: l**2}, u, {1-t: v})
+
+
+def euler_gompertz_seeds():
+    """Source s_0,...,s_3 and q_0,...,q_3, with s_0=0, q_0=1."""
+    return Matrix([[0, 1, 4, 20]]), Matrix([[1, 2, 7, 34]])
+
+
+def rivoal_gamma_recurrence(l):
+    """Rivoal (2009), Corollary 1(i), with source n=l-1.
+
+    Returns coefficients of J_(l+s), s=-1,0,1,2.
+    https://rivoal.perso.math.cnrs.fr/articles/eulerconstant.pdf
+    """
+    n = l - 1
+    return {
+        -1: -(n+2)**2*(8*n+19)*(8*n+27),
+        0: (8*n+27)*(24*n**3+105*n**2+124*n+25),
+        1: -(n+3)*(8*n+11)*(24*n**2+145*n+215),
+        2: (n+3)**2*(8*n+11)*(8*n+19),
+    }
+
+
+def rivoal_gamma():
+    """Rank-7 two-axis moment-functional extension of Rivoal's gamma sequence.
+
+    S(u,v)=L(t^u(1-t)^v), L(t^n)=J_n, with J any source solution.
+    u is the source-index axis; v is an auxiliary binomial-transform axis,
+    not an additional parameter claimed in Rivoal's paper. Start (0,0),
+    trajectory (1,0), readout (P W)[0]/(Q W)[0].
+    """
+    l, u, v = sp.symbols("l u v")
+    return functional_cmf(rivoal_gamma_recurrence(l), u, {1-t: v})
+
+
+def rivoal_gamma_seeds():
+    """Exact seven-moment starting rows for rivoal_gamma()."""
+    rows = [[sp.Integer(-1), sp.Integer(4), sp.Rational(77, 4)],
+            [sp.Integer(1), sp.Integer(7), sp.Rational(65, 2)]]
+    for row in rows:
+        for n in range(4):
+            c = rivoal_gamma_recurrence(n+1)
+            row.append(-sum(c[j-1]*row[n+j] for j in range(3))/c[2])
+    return Matrix([rows[0]]), Matrix([rows[1]])
+
+
+def rivoal_simultaneous_recurrence(n):
+    """Coefficients of U_n,...,U_(n+4) in Rivoal (2009), equation (8.3)."""
+    return [
+        (n+2)*(n+1)**3*(729*n**4+8910*n**3+40653*n**2+82084*n+61902),
+        (n+2)*(2916*n**7+46575*n**6+308088*n**5+1088368*n**4
+               +2203128*n**3+2534133*n**2+1515768*n+355944),
+        4374*n**8+123444*n**7+1407402*n**6+8701584*n**5+32365428*n**4
+        +74773104*n**3+105325246*n**2+82984580*n+28063902,
+        (n+3)*(2916*n**7+32724*n**6+99756*n**5-203447*n**4
+               -2028202*n**3-5195409*n**2-5955904*n-2629472),
+        (n+3)*(n+4)**3*(729*n**4+5994*n**3+18297*n**2+24592*n+12290),
+    ]
+
+
+def rivoal_simultaneous_moments(n):
+    """Signed moments (-1)^n(A,B,C,D) from Proposition 21 at z=1.
+
+    This normalization matches the signs of printed recurrence (8.3).
+    The common sign cancels in all Section 9.1 determinant ratios.
+    """
+    from math import comb, factorial
+    def choose(a, b):
+        return comb(a, b) if 0 <= b <= a else 0
+    # The inner convolution in the paper's double sum, precomputed once.
+    inner = [sum(choose(n,l)*choose(n,j-l)*choose(n+l,n)
+                 for l in range(j+1)) for j in range(2*n+1)]
+    coeff = [fmpq((-1)**k, factorial(k))*sum(
+        choose(n,k-j)*choose(n+j,n)*inner[j]
+        for j in range(min(k,2*n)+1)) for k in range(3*n+1)]
+    A = sum(coeff, fmpq(0))
+    B = C = D = H = H2 = sb = sc = sd = fmpq(0)
+    for k in range(1,3*n+1):
+        j = k-1
+        if j:
+            H += fmpq(1,j)
+            H2 += fmpq(1,j*j)
+        sb += factorial(j)
+        sc += factorial(j)*H
+        sd += factorial(j)*(H*H-H2)
+        B += coeff[k]*sb
+        C += coeff[k]*sc
+        D += coeff[k]*sd
+    return tuple((-1)**n * value for value in (A,B,C,D))
+
+
+def borwein_bradley_zeta7_recurrence(n):
+    """Coefficients of J_n,...,J_(n+3) for partial sums of (1.4).
+
+    Derived here from the summand ratio, not a recurrence printed by the authors.
+    https://arxiv.org/pdf/math/0505124
+    """
+    return [
+        -(n+1)**7*(n+2)*(n**2+6*n+10)*(5*n**2+26*n+34),
+        -(n+2)*(35*n**11+817*n**10+8639*n**9+54661*n**8
+          +230185*n**7+678293*n**6+1429145*n**5+2155735*n**4
+          +2283392*n**3+1618058*n**2+690220*n+134180),
+        -2*(2*n+3)*(10*n**11+322*n**10+4510*n**9+36810*n**8
+          +196197*n**7+720946*n**6+1870568*n**5+3435900*n**4
+          +4386767*n**3+3712508*n**2+1875972*n+429010),
+        4*(n+3)**6*(2*n+3)*(2*n+5)*(n**2+4*n+5)*(5*n**2+16*n+13),
+    ]
+
+
+def borwein_bradley_zeta7_seeds():
+    """Fifteen partial-sum moments, and constant denominator moments."""
+    import math
+    values = [fmpq(0)]
+    H = fmpq(0)
+    for k in range(1, 15):
+        values.append(values[-1]+fmpq(5*(-1)**(k+1), 2*k**3*math.comb(2*k,k))
+                      *(fmpq(1,k**4)+5*H))
+        H += fmpq(1,k**4)
+    return fmpq_mat([values, [1]*15])
+
+
+class BorweinBradleyZeta7CMF:
+    """Rank-15 two-axis moment extension, evaluated exactly at integer points.
+
+    S(u,v)=L(t^u(1-t)^v); L(t^n) is the n-term partial sum or 1.
+    The auxiliary v-axis is our binomial extension, not a source parameter.
+    Uses the operator proof of functional_cmf with degree 12 coefficients.
+    Only nonnegative forward walks are offered; the constant solution is
+    annihilated by v at the boundary v=0, so inverse v-steps there are singular.
+    """
+    def __init__(self):
+        self.axes = sp.symbols('u v')
+        self.rank = 15
+        l = sp.Symbol('l')
+        self.coefficients = [[int(sp.Poly(c,l).nth(j)) for j in range(13)]
+                             for c in borwein_bradley_zeta7_recurrence(l-1)]
+
+    def step(self, axis, point):
+        u,v = (int(point[a]) for a in self.axes)
+        if u < 0 or v < 0 or axis not in self.axes:
+            raise ValueError('nonnegative integer coordinates and a field axis required')
+        t, h = fmpq_poly([0,1]), fmpq_poly([1,-1])
+        powers = [fmpq_poly([1])]
+        for j in range(12):
+            P = powers[-1]
+            powers.append(((u+1)*h-(v+12-j)*t)*P+t*h*P.derivative())
+        Q = sum((t**i*sum((c[j]*h**(12-j)*powers[j] for j in range(13)),
+                         fmpq_poly()) for i,c in enumerate(self.coefficients)), fmpq_poly())
+        if Q.degree() != self.rank or not Q[self.rank]:
+            raise ZeroDivisionError('singular moment reduction')
+        M = fmpq_mat(self.rank,self.rank)
+        for j in range(self.rank-1): M[j+1,j] = 1
+        for i in range(self.rank): M[i,self.rank-1] = -Q[i]/Q[self.rank]
+        if axis == self.axes[0]: return M
+        return fmpq_mat([[int(i==j) for j in range(self.rank)] for i in range(self.rank)])-M
+
+    def walk(self, trajectory, depths, start, initial=None):
+        """Exact forward products, optionally applied directly to initial rows."""
+        point = dict(start)
+        W = (fmpq_mat([[int(i==j) for j in range(self.rank)] for i in range(self.rank)])
+             if initial is None else fmpq_mat(initial))
+        for N in depths:
+            target = {a:start[a]+N*trajectory[a] for a in self.axes}
+            for a in self.axes:
+                if target[a] < point[a] or int(target[a]) != target[a]:
+                    raise ValueError('walk coordinates must increase by integers')
+                while point[a] < target[a]:
+                    W = W*self.step(a,point)
+                    point[a] += 1
+            yield W
+
+
+class RivoalSimultaneousCMF:
+    """Rank-12 two-axis moment extension of equation (8.3), exact at integers.
+
+    S(u,v)=L(t^u(1-t)^v); v is an auxiliary binomial-transform axis.
+    Uses the same operator identity as functional_cmf, evaluated as short
+    polynomials to avoid expansion of large symbolic matrices. The source's
+    sixth-order sequences are determinant readouts, not these 12 moments.
+    """
+    def __init__(self):
+        self.axes = sp.symbols('u v')
+        self.rank = 12
+        l = sp.Symbol('l')
+        self.coefficients = [[int(sp.Poly(c,l).nth(j)) for j in range(9)]
+                             for c in rivoal_simultaneous_recurrence(l-1)]
+
+    def step(self, axis, point):
+        u,v = (int(point[a]) for a in self.axes)
+        if u < 0 or v < 0 or axis not in self.axes:
+            raise ValueError('nonnegative integer coordinates and a field axis required')
+        t = fmpq_poly([0,1])
+        h = fmpq_poly([1,-1])
+        powers = [fmpq_poly([1])]
+        for j in range(8):
+            P = powers[-1]
+            powers.append(((u+1)*h-(v+8-j)*t)*P+t*h*P.derivative())
+        Q = sum((t**i*sum((c[j]*h**(8-j)*powers[j] for j in range(9)),
+                         fmpq_poly()) for i,c in enumerate(self.coefficients)), fmpq_poly())
+        if Q.degree() != 12 or not Q[12]:
+            raise ZeroDivisionError('singular moment reduction')
+        M = fmpq_mat(12,12)
+        for j in range(11): M[j+1,j] = 1
+        for i in range(12): M[i,11] = -Q[i]/Q[12]
+        if axis == self.axes[0]: return M
+        return fmpq_mat([[int(i==j) for j in range(12)] for i in range(12)])-M
+
+    def walk(self, trajectory, depths, start, initial=None):
+        """Yield exact products, or transported initial rows, along nonnegative axes."""
+        point = dict(start)
+        W = (fmpq_mat([[int(i==j) for j in range(12)] for i in range(12)])
+             if initial is None else fmpq_mat(initial))
+        for N in depths:
+            target = {a:start[a]+N*trajectory[a] for a in self.axes}
+            for a in self.axes:
+                if target[a] < point[a] or int(target[a]) != target[a]:
+                    raise ValueError('walk coordinates must increase by integers')
+                while point[a] < target[a]:
+                    W = W*self.step(a,point)
+                    point[a] += 1
+            yield W
+
+
+def rivoal_simultaneous_seeds():
+    """Four rows A,B,C,D of twelve initial source moments."""
+    values = [rivoal_simultaneous_moments(n) for n in range(12)]
+    return fmpq_mat([[values[n][j] for n in range(12)] for j in range(4)])
+
+
+def rivoal_simultaneous_readout(state):
+    """Section 9.1: return fractions for gamma and zeta(2)-gamma^2."""
+    A,B,C,D = ([state[i,j] for j in range(2)] for i in range(4))
+    q = B[0]*A[1]-B[1]*A[0]
+    return (C[0]*A[1]-C[1]*A[0])/q, (A[0]*D[1]-A[1]*D[0])/q
+
+
 def dvornicich_viola_zeta3():
     """Dvornicich--Viola's (1987) zeta(3) CMF: axes (e0, e1, e2), rank 8.
 
@@ -746,3 +1099,221 @@ def dvornicich_viola_zeta2():
     e0, e1, e2 = sp.symbols("e0 e1 e2")
     recurrence = {1: (l + 1) ** 2, 0: 11 * l**2 + 11 * l + 3, -1: -(l**2)}
     return functional_cmf(recurrence, e0, {1 - 11 * t: e1, 1 - 12 * t: e2})
+
+
+def dvornicich_viola_zeta2_seeds():
+    """Rows C,Z of (K_0,...,K_5), where K_l=C_l+Z_l*zeta(2)."""
+    a, b = [fmpq(1), fmpq(3)], [fmpq(0), fmpq(5)]
+    for n in range(1, 5):
+        for u in (a, b):
+            u.append(((11*n*n + 11*n + 3)*u[-1] + n*n*u[-2]) / (n+1)**2)
+    return fmpq_mat([[(-1)**(n+1)*b[n] for n in range(6)],
+                     [(-1)**n*a[n] for n in range(6)]])
+
+
+def dvornicich_viola_zeta2_path(m):
+    """Even staircase exponents, using the original notebook's exact slopes."""
+    e0, e1, e2 = sp.symbols("e0 e1 e2")
+    return {e0: 2*(1853172*m // 10**5), e1: 2*(138784*m // 10**5), e2: 2*m}
+
+
+def staircase_states(cmf, start, path, depths, seeds):
+    """Exact row states on a nondecreasing integer path; multiply steps in pairs.
+
+    Visit every intermediate integer path index, in the axis order of start.
+    This preserves the original staircase and avoids symbolic substitutions.
+    """
+    step = axis_steps(cmf)
+    point, state, previous = dict(start), seeds, 0
+    states = []
+    for depth in depths:
+        if depth <= previous:
+            raise ValueError("depths must be strictly increasing positive integers")
+        matrices = []
+        for index in range(previous + 1, depth + 1):
+            target = path(index)
+            for axis in point:
+                if target[axis] < point[axis]:
+                    raise ValueError("the staircase must be nondecreasing")
+                while point[axis] < target[axis]:
+                    matrices.append(step(axis, point))
+                    point[axis] += 1
+        while len(matrices) > 1:
+            matrices = [matrices[i]*matrices[i+1] if i+1 < len(matrices) else matrices[i]
+                        for i in range(0, len(matrices), 2)]
+        if matrices:
+            state = state * matrices[0]
+        states.append(state)
+        previous = depth
+    return states
+
+
+def dvornicich_viola_zeta3_seeds():
+    """Rows C,Z of J_0,...,J_7 with J_l = 2(a_l*zeta(3)-b_l)."""
+    a, b = [fmpq(1), fmpq(5)], [fmpq(0), fmpq(6)]
+    for n in range(1, 7):
+        for u in (a, b):
+            u.append(((34*n**3+51*n*n+27*n+5)*u[-1]-n**3*u[-2])/(n+1)**3)
+    return fmpq_mat([[-2*x for x in b], [2*x for x in a]])
+
+
+def dvornicich_viola_zeta3_path(m):
+    e0, e1, e2 = sp.symbols("e0 e1 e2")
+    return {e0: 2*(5641*m // 100), e1: 2*(1342*m // 1000), e2: 2*m}
+
+
+def rhin_log2_path(n):
+    e = sp.symbols("e1:7")
+    slopes = (84943, 2401, 9100, 2068, 1130, 179)
+    return {**{x: s*n // 10**5 for x, s in zip(e, slopes)}, sp.Symbol("b"): n+1}
+
+
+def rhin_log2_seeds():
+    """Coefficients of the first fourteen moments of 1/(1+t)."""
+    C, R = [fmpq(0)], [fmpq(1)]
+    for j in range(1, 14):
+        C.append(fmpq(1, j)-C[-1])
+        R.append(-R[-1])
+    return fmpq_mat([C, R])
+
+
+def integer_staircase_states(step, start, path, depths, seeds):
+    """Walk an integer-point axis evaluator along every source staircase point."""
+    point, state, states = dict(start), seeds, []
+    requested = set(depths)
+    for n in range(1, depths[-1]+1):
+        target = path(n)
+        for x in point:
+            while point[x] < target[x]:
+                state = state * step(x, point)
+                point[x] += 1
+        if n in requested:
+            states.append(state)
+    return states
+
+
+def numerical_dual_walk(cmf, trajectory, depths, start):
+    """Exact inverse-transpose walks; avoid symbolic inversion of large fields."""
+    from ramanujantools import Position
+    from ramanujantools.flint_core.numeric_matrix import NumericMatrix
+    n = sp.Symbol("n")
+    matrix = cmf.trajectory_matrix(trajectory, start)
+    walks = NumericMatrix.walk(matrix, Position({n: 1}), depths, Position({n: 0}))
+    return [W.inv().transpose() for W in walks]
+
+
+def meijer_g_fibre(cmf, z):
+    """Realify a library Meijer G field on the fibre b=0, at a complex argument."""
+    fibre = {sp.Symbol("z"): z, **{b: 0 for b in cmf.b_axes(cmf.q)}}
+    return CMF(realify({a: cmf.M(a).subs(fibre) for a in cmf.a_axes(cmf.p)}))
+
+
+def mahler_pi_readout(D, degree):
+    """Real(2i*x/y) from the last two complex coordinates of a dual walk."""
+    rank = degree+1
+    xr, xi = D[degree-1, degree], D[degree-1+rank, degree]
+    yr, yi = D[degree, degree], D[degree+rank, degree]
+    return 2*(xr*yi-xi*yr)/(yr*yr+yi*yi)
+
+
+def hata_pi_seeds():
+    R = sp.Rational
+    return (Matrix([[R(-50, 3), R(355, 12), R(-67, 3), 43, R(-118, 3), R(521, 30)]]),
+            Matrix([[-38, 28, -8, -38, 50, -32]]))
+
+
+def hata_pi_readout(W, C, R):
+    c, r = C*W, R*W
+    return -4*(c[3]*r[0]-c[0]*r[3])/(r[0]**2+r[3]**2)
+
+
+def salikhov_pi_seeds(family="Salikhov"):
+    R = sp.Rational
+    rows = {
+        "Salikhov": ([R(164534670966016, 39375), R(5446024280041216, 17325), R(21163235310750464, 1001)],
+                     [R(-166263531392, 125), R(-500295344512, 5), -6729737285760]),
+        "Zeilberger-Zudilin": ([R(11272, 15), R(658792, 15), R(74495016, 35)],
+                             [R(-1196, 5), -13980, -677500]),
+        "Bai": ([0, 4, R(296, 3)], [R(-1, 20), R(-5, 4), R(-125, 4)]),
+    }
+    C, Q = rows[family]
+    return Matrix([C]), Matrix([Q])
+
+
+def eskandari_catalan_seeds():
+    R = sp.Rational
+    Q = Matrix([[8, -14, R(649, 8), R(-19471, 32), R(10439881, 2048), R(-372106183, 8192),
+                 R(55182648049, 131072), R(-2102590888447, 524288)]])
+    P = Matrix([[0, -13, R(10699, 144), R(-8025653, 14400), R(210854706467, 45158400),
+                 R(-67638995691893, 1625702400), R(1213719058519951259, 3147359846400),
+                 R(-7815506292703811398013, 2127615256166400)]])
+    return P, Q
+
+
+def brown_zudilin_seeds():
+    P = [fmpq(16342893984375, 8), fmpq(7888732953125, 2), fmpq(24573697734375, 8),
+         1206481062500, fmpq(1912606640625, 8), fmpq(76504265625, 4), 0]
+    Q = [1969765000000, fmpq(15220831421875, 4), fmpq(11858161171875, 4),
+         fmpq(2329422984375, 2), fmpq(461663671875, 2), 18466546875, 0]
+    return P, Q
+
+
+def hata_pfq_seeds(cmf, d, s, start):
+    """Transport the hypergeometric coefficient rows to a chosen source start."""
+    x0, x1, y0 = sp.symbols("x0 x1 y0")
+    seed = {x0: 1, x1: 1-d, y0: 2-d}
+    C = Matrix([[0, sp.Rational(s, s-1)]])
+    B = Matrix([[1/(1-d), -1]])
+    T = cmf.work(seed, start)
+    return C*T, B*T
+
+
+def source_residue_depths(depths, offset, period):
+    """Sample valid source indices and include the last admissible endpoint."""
+    last = depths[-1] - (depths[-1]-offset) % period
+    return sorted({n for n in depths if (n-offset) % period == 0} | {last})
+
+
+def gregory_target(M):
+    """Independent dilogarithm target at the current Arb precision."""
+    from flint import arb, acb
+    k = arb(M-1).sqrt()
+    return k/2 * acb.polylog(2/(1-acb(0, 1)*k), 2).imag
+
+
+def zeta23_search_seeds():
+    return (Matrix([[-18266336406752995, 320242182383092497, -5523372274576928103]]),
+            Matrix([[-6416014872960000, 112484439099648000, -1940073689296512000]]))
+
+
+def giraudin_zeta3_walk(cmf, trajectory, depths, start):
+    """Exact original nonsingular path, extended to arbitrary source indices.
+
+    Each source step is 52000 Rhin--Viola periods followed by a correction.
+    This is intentionally explicit: even depth 1 is expensive.
+    """
+    from ramanujantools import Position
+    from ramanujantools.flint_core.numeric_matrix import NumericMatrix
+    axes = tuple(start)
+    base = (0, 7, 31, 32, 18, 17, 16, 19)
+    shift = {x: trajectory[x]-52000*v for x, v in zip(axes, base)}
+    n = sp.Symbol("n")
+    matrix = cmf.trajectory_matrix(dict(zip(axes, base)), start)
+    walks = NumericMatrix.walk(matrix, Position({n: 1}), [52000*N for N in depths], Position({n: 0}))
+    step, output = axis_steps(cmf), []
+    for N, W in zip(depths, walks):
+        point = {x: start[x]+52000*N*v for x, v in zip(axes, base)}
+        lower = [x for x in axes for _ in range(abs(N*shift[x])) if (shift[x]<0)==(x in axes[:4])]
+        higher = [x for x in axes for _ in range(abs(N*shift[x])) if (shift[x]<0)!=(x in axes[:4])]
+        assert len(lower) == len(higher)
+        for pair in zip(lower, higher):
+            for x in pair:
+                if shift[x] > 0:
+                    W = W*step(x, point)
+                    point[x] += 1
+                else:
+                    point[x] -= 1
+                    W = W*step(x, point).inv()
+        assert all(point[x] == start[x]+N*trajectory[x] for x in axes)
+        output.append(W)
+    return output
