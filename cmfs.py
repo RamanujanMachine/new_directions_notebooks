@@ -18,8 +18,9 @@ ramanujantools supplies the pFq and Meijer G CMFs. The others are:
   Heimonen--Matala-aho--Vaananen Jacobi-Pade moment field, and Hata's
   pi/sqrt(3) integral in rational rank-3 coordinates; Hata's (1992)
   rank-2 hypergeometric remainders for algebraic logarithms and pi combinations.
-  The Stieltjes Euler--Gompertz recovery also now uses pFq(1, 1, -1);
-  its older auxiliary moment field is retained as an independent reference.
+  The Stieltjes Euler--Gompertz and Rivoal gamma recoveries now use dual
+  Meijer G fields; their older auxiliary moment fields are retained as
+  independent references.
   `local_checks/verify_hypergeometric_replacements.py` compares all sampled fractions with
   these references; the quadratic and Hata (1993) replacements use even indices.
 * Zudilin's (2002) zeta(5) coefficient seeds and determinant readout for the
@@ -29,6 +30,8 @@ ramanujantools walks only rational matrices, so CMFs over Q(i) are realified:
 a row S = Re S + i Im S becomes (Re S, Im S). ramanujantools checks
 conservation when it constructs each CMF.
 """
+import itertools
+
 import sympy as sp
 from flint import fmpq, fmpq_mat, fmpq_poly
 from ramanujantools import Matrix
@@ -1069,6 +1072,12 @@ def rivoal_simultaneous_readout(state):
     A,B,C,D = ([state[i,j] for j in range(2)] for i in range(4))
     q = B[0]*A[1]-B[1]*A[0]
     return (C[0]*A[1]-C[1]*A[0])/q, (A[0]*D[1]-A[1]*D[0])/q
+
+
+def second_compound(W):
+    """2x2 minors of W, rows and columns indexed by pairs i < j in lexicographic order."""
+    pairs = list(itertools.combinations(range(W.rows), 2))
+    return Matrix([[W[i, k]*W[j, l]-W[i, l]*W[j, k] for k, l in pairs] for i, j in pairs])
 
 
 def dvornicich_viola_zeta3():
