@@ -21,7 +21,7 @@ ramanujantools supplies the pFq and Meijer G CMFs. The others are:
   The Stieltjes Euler--Gompertz and Rivoal gamma recoveries now use dual
   Meijer G fields; their older auxiliary moment fields are retained as
   independent references.
-  `local_checks/verify_hypergeometric_replacements.py` compares all sampled fractions with
+  A separate verification script (available on request) compares all sampled fractions with
   these references; the quadratic and Hata (1993) replacements use even indices.
 * Zudilin's (2002) zeta(5) coefficient seeds and determinant readout for the
   full 15-axis pFq(8, 7, 1) field, plus its rank-3 recurrence for cross-checks.
